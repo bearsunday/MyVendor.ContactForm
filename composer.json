@@ -1,0 +1,20 @@
+{
+    "name": "my-vendor/contact-form",
+    "description":"n/a",
+    "license": "proprietary",
+    "require": {
+        "bear/package": "~1.0",
+        "ray/web-form-module": "1.x-dev",
+        "madapaja/twig-module": "1.x-dev",
+        "foa/filter-input-bundle": "~1.1@dev",
+        "aura/html": "^2.4"
+    },
+    "require-dev": {
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "MyVendor\\ContactForm\\": "src/"
+        }
+    }
+}
