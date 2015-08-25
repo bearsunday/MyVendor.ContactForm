@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4159e5c74b9c6d9786ef9ca5f7ad6518",
+    "hash": "3be8edad6a07e88c1dd5e1cc67af216c",
     "packages": [
         {
             "name": "aura/cli",
-            "version": "2.x-dev",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auraphp/Aura.Cli.git",
-                "reference": "375504b54dcf8d93f99b18a076ccf1640301bd6c"
+                "reference": "b550cd79beff793ec5feeea248ccd4ba537c8603"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Cli/zipball/375504b54dcf8d93f99b18a076ccf1640301bd6c",
-                "reference": "375504b54dcf8d93f99b18a076ccf1640301bd6c",
+                "url": "https://api.github.com/repos/auraphp/Aura.Cli/zipball/b550cd79beff793ec5feeea248ccd4ba537c8603",
+                "reference": "b550cd79beff793ec5feeea248ccd4ba537c8603",
                 "shasum": ""
             },
             "require": {
@@ -33,6 +33,9 @@
                     "config": {
                         "common": "Aura\\Cli\\_Config\\Common"
                     }
+                },
+                "branch-alias": {
+                    "dev-develop-2": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -61,7 +64,7 @@
                 "options",
                 "stdio"
             ],
-            "time": "2015-04-28 10:38:18"
+            "time": "2015-03-27 17:23:08"
         },
         {
             "name": "aura/filter",
@@ -121,16 +124,16 @@
         },
         {
             "name": "aura/html",
-            "version": "2.x-dev",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auraphp/Aura.Html.git",
-                "reference": "70a296df09331bc05a20eead6f41a253238cc3af"
+                "reference": "7f575f35765af41091b85b23a92b168ae0c5765f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Html/zipball/70a296df09331bc05a20eead6f41a253238cc3af",
-                "reference": "70a296df09331bc05a20eead6f41a253238cc3af",
+                "url": "https://api.github.com/repos/auraphp/Aura.Html/zipball/7f575f35765af41091b85b23a92b168ae0c5765f",
+                "reference": "7f575f35765af41091b85b23a92b168ae0c5765f",
                 "shasum": ""
             },
             "require": {
@@ -146,6 +149,9 @@
                     "config": {
                         "common": "Aura\\Html\\_Config\\Common"
                     }
+                },
+                "branch-alias": {
+                    "dev-develop-2": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -177,23 +183,24 @@
                 "html",
                 "input"
             ],
-            "time": "2015-08-01 19:01:37"
+            "time": "2015-03-27 17:31:31"
         },
         {
             "name": "aura/input",
-            "version": "1.x-dev",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auraphp/Aura.Input.git",
-                "reference": "92277590e837d7d1a5d36c2a65670be7dcbbb37b"
+                "reference": "f3c567bc12c7a7d5195a5ad659c1f29ec481378e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Input/zipball/92277590e837d7d1a5d36c2a65670be7dcbbb37b",
-                "reference": "92277590e837d7d1a5d36c2a65670be7dcbbb37b",
+                "url": "https://api.github.com/repos/auraphp/Aura.Input/zipball/f3c567bc12c7a7d5195a5ad659c1f29ec481378e",
+                "reference": "f3c567bc12c7a7d5195a5ad659c1f29ec481378e",
                 "shasum": ""
             },
             "require": {
+                "aura/installer-default": "1.*",
                 "php": ">=5.4.0"
             },
             "type": "aura-package",
@@ -203,6 +210,9 @@
                     "config": {
                         "common": "Aura\\Input\\_Config\\Common"
                     }
+                },
+                "branch-alias": {
+                    "dev-develop": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -231,30 +241,79 @@
                 {
                     "name": "Aura.Input Contributors",
                     "homepage": "https://github.com/auraphp/Aura.Input/contributors"
+                },
+                {
+                    "name": "Akihito Koriyama",
+                    "email": "akihito.koriyama@gmail.com"
+                },
+                {
+                    "name": "Daniel Haaker",
+                    "email": "d.haaker@gmail.com"
                 }
             ],
             "description": "This package contains tools to describe and filter user inputs from an HTML form, including sub-forms/sub-fieldsets, fieldset collections, an interface for injecting custom filter systems, and CSRF protection. Note that this package does not include output functionality, although the \"hints\" provided by the Form object can be used with any presentation system to generate an HTML form.",
-            "homepage": "http://auraphp.github.com/Aura.Input",
+            "homepage": "http://auraphp.com/Aura.Input",
             "keywords": [
                 "field",
                 "form",
                 "html",
                 "input"
             ],
-            "time": "2015-04-04 14:40:35"
+            "time": "2014-08-24 00:00:00"
         },
         {
-            "name": "aura/session",
-            "version": "2.x-dev",
+            "name": "aura/installer-default",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/auraphp/Aura.Session.git",
-                "reference": "b24aed6e4ba116cd389c7306a60a42ae9d1979d0"
+                "url": "https://github.com/auraphp/installer-default.git",
+                "reference": "52f8de3670cc1ef45a916f40f732937436d028c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Session/zipball/b24aed6e4ba116cd389c7306a60a42ae9d1979d0",
-                "reference": "b24aed6e4ba116cd389c7306a60a42ae9d1979d0",
+                "url": "https://api.github.com/repos/auraphp/installer-default/zipball/52f8de3670cc1ef45a916f40f732937436d028c8",
+                "reference": "52f8de3670cc1ef45a916f40f732937436d028c8",
+                "shasum": ""
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "Aura\\Composer\\DefaultInstaller"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Aura\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul M. Jones",
+                    "email": "pmjones88@gmail.com",
+                    "homepage": "http://paul-m-jones.com"
+                }
+            ],
+            "description": "Installs Aura packages using the Composer defaults.",
+            "keywords": [
+                "aura",
+                "installer"
+            ],
+            "time": "2012-11-26 21:35:57"
+        },
+        {
+            "name": "aura/session",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Session.git",
+                "reference": "9e018278794228e40c7695b699c848bea2355a12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Session/zipball/9e018278794228e40c7695b699c848bea2355a12",
+                "reference": "9e018278794228e40c7695b699c848bea2355a12",
                 "shasum": ""
             },
             "require": {
@@ -275,6 +334,9 @@
                     "config": {
                         "common": "Aura\\Session\\_Config\\Common"
                     }
+                },
+                "branch-alias": {
+                    "dev-develop-2": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -302,11 +364,11 @@
                 "session",
                 "sessions"
             ],
-            "time": "2015-07-09 01:21:08"
+            "time": "2015-03-27 18:33:22"
         },
         {
             "name": "bear/app-meta",
-            "version": "1.x-dev",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.AppMeta.git",
@@ -342,7 +404,7 @@
         },
         {
             "name": "bear/package",
-            "version": "1.x-dev",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.Package.git",
@@ -396,7 +458,7 @@
         },
         {
             "name": "bear/query-repository",
-            "version": "1.x-dev",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.QueryRepository.git",
@@ -490,7 +552,7 @@
         },
         {
             "name": "bear/sunday",
-            "version": "1.x-dev",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.Sunday.git",
@@ -542,7 +604,7 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "dev-master",
+            "version": "v1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
@@ -610,16 +672,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "dev-master",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b"
+                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e7b77e5abe230a2cc1db5005fb86435da213ae3b",
-                "reference": "e7b77e5abe230a2cc1db5005fb86435da213ae3b",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/c9eadeb743ac6199f7eec423cb9426bc518b7b03",
+                "reference": "c9eadeb743ac6199f7eec423cb9426bc518b7b03",
                 "shasum": ""
             },
             "require": {
@@ -676,11 +738,11 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-06-29 15:03:18"
+            "time": "2015-04-15 00:11:59"
         },
         {
             "name": "doctrine/lexer",
-            "version": "dev-master",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
@@ -734,16 +796,16 @@
         },
         {
             "name": "foa/filter-input-bundle",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/friendsofaura/FOA.Filter_Input_Bundle.git",
-                "reference": "1d0b6aa49b357850406562d01e24ecee71fc1c80"
+                "reference": "394489aaeb27c7a60a534d493517acf585dea358"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/friendsofaura/FOA.Filter_Input_Bundle/zipball/1d0b6aa49b357850406562d01e24ecee71fc1c80",
-                "reference": "1d0b6aa49b357850406562d01e24ecee71fc1c80",
+                "url": "https://api.github.com/repos/friendsofaura/FOA.Filter_Input_Bundle/zipball/394489aaeb27c7a60a534d493517acf585dea358",
+                "reference": "394489aaeb27c7a60a534d493517acf585dea358",
                 "shasum": ""
             },
             "require": {
@@ -790,39 +852,48 @@
                 "sanitize",
                 "validate"
             ],
-            "time": "2015-04-21 07:23:59"
+            "time": "2014-08-17 03:12:52"
         },
         {
             "name": "koriym/printo",
-            "version": "1.x-dev",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/print_o.git",
-                "reference": "7952526e05a022410d7f23146ffb86419d0267b3"
+                "reference": "d969e4cc738a376d479c2125e7d62be88cfa9dbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/print_o/zipball/7952526e05a022410d7f23146ffb86419d0267b3",
-                "reference": "7952526e05a022410d7f23146ffb86419d0267b3",
+                "url": "https://api.github.com/repos/koriym/print_o/zipball/d969e4cc738a376d479c2125e7d62be88cfa9dbe",
+                "reference": "d969e4cc738a376d479c2125e7d62be88cfa9dbe",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Koriym\\Printo\\": "src/"
-                }
+                },
+                "files": [
+                    "src/print_o.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
                     "name": "Akihito Koriyama",
-                    "email": "akihito.koriyama@gmail.com"
+                    "email": "akihito.koriyama@gmail.com",
+                    "homepage": "https://github.com/koriym"
                 }
             ],
             "description": "An object graph visualizer.",
@@ -831,20 +902,20 @@
                 "debug",
                 "var_dump"
             ],
-            "time": "2015-06-30 02:47:48"
+            "time": "2015-02-13 19:04:21"
         },
         {
             "name": "koriym/psr4list",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/koriym/Koriym.Psr4List.git",
-                "reference": "601ec2933b4f2a74ec127b4ccadcdd56ae585c17"
+                "reference": "090772659511ea137bbc573e681cf71a1b7f7b2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/koriym/Koriym.Psr4List/zipball/601ec2933b4f2a74ec127b4ccadcdd56ae585c17",
-                "reference": "601ec2933b4f2a74ec127b4ccadcdd56ae585c17",
+                "url": "https://api.github.com/repos/koriym/Koriym.Psr4List/zipball/090772659511ea137bbc573e681cf71a1b7f7b2d",
+                "reference": "090772659511ea137bbc573e681cf71a1b7f7b2d",
                 "shasum": ""
             },
             "type": "library",
@@ -866,7 +937,7 @@
             "keywords": [
                 "psr4"
             ],
-            "time": "2014-12-07 13:13:05"
+            "time": "2014-12-07 13:10:31"
         },
         {
             "name": "madapaja/twig-module",
@@ -974,7 +1045,7 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "1.x-dev",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
@@ -1067,30 +1138,22 @@
         },
         {
             "name": "psr/log",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "9e45edca52cc9c954680072c93e621f8b71fab26"
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/9e45edca52cc9c954680072c93e621f8b71fab26",
-                "reference": "9e45edca52cc9c954680072c93e621f8b71fab26",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=5.3.0"
-            },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
             "autoload": {
-                "psr-4": {
-                    "Psr\\Log\\": "Psr/Log/"
+                "psr-0": {
+                    "Psr\\Log\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1109,20 +1172,20 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2015-06-02 13:48:41"
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "ray/aop",
-            "version": "2.x-dev",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.Aop.git",
-                "reference": "0680e993137fb50b3b6c1773f24fe6e938aa90c7"
+                "reference": "ebda1d3013e35a9538d390d6914f3e532d290c3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.Aop/zipball/0680e993137fb50b3b6c1773f24fe6e938aa90c7",
-                "reference": "0680e993137fb50b3b6c1773f24fe6e938aa90c7",
+                "url": "https://api.github.com/repos/ray-di/Ray.Aop/zipball/ebda1d3013e35a9538d390d6914f3e532d290c3e",
+                "reference": "ebda1d3013e35a9538d390d6914f3e532d290c3e",
                 "shasum": ""
             },
             "require": {
@@ -1157,11 +1220,11 @@
                 "aop",
                 "code-gen"
             ],
-            "time": "2015-06-30 06:02:30"
+            "time": "2015-05-27 14:59:45"
         },
         {
             "name": "ray/compiler",
-            "version": "1.x-dev",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.Compiler.git",
@@ -1199,7 +1262,7 @@
         },
         {
             "name": "ray/di",
-            "version": "2.x-dev",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.Di.git",
@@ -1249,12 +1312,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.WebFormModule.git",
-                "reference": "fd3de16f0e219759c159d852902ca7ddf7329f45"
+                "reference": "60886bed301d32c6660977d290866c0b8f02d9d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/fd3de16f0e219759c159d852902ca7ddf7329f45",
-                "reference": "fd3de16f0e219759c159d852902ca7ddf7329f45",
+                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/60886bed301d32c6660977d290866c0b8f02d9d6",
+                "reference": "60886bed301d32c6660977d290866c0b8f02d9d6",
                 "shasum": ""
             },
             "require": {
@@ -1279,11 +1342,11 @@
                 "Ray.Di module",
                 "web form"
             ],
-            "time": "2015-08-24 19:25:15"
+            "time": "2015-08-25 12:04:41"
         },
         {
             "name": "ray/web-param-module",
-            "version": "1.x-dev",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.WebParamModule.git",
@@ -1366,16 +1429,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "1.x-dev",
+            "version": "v1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "71b4dc2572eb822552e394a254a7bdf16be15448"
+                "reference": "913d282caca9ee0e8d05940c6caa486d58810dd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/71b4dc2572eb822552e394a254a7bdf16be15448",
-                "reference": "71b4dc2572eb822552e394a254a7bdf16be15448",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/913d282caca9ee0e8d05940c6caa486d58810dd4",
+                "reference": "913d282caca9ee0e8d05940c6caa486d58810dd4",
                 "shasum": ""
             },
             "require": {
@@ -1423,7 +1486,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-08-24 09:58:37"
+            "time": "2015-08-24 09:51:18"
         }
     ],
     "packages-dev": [],
@@ -1434,7 +1497,7 @@
         "madapaja/twig-module": 20,
         "foa/filter-input-bundle": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
