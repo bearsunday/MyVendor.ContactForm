@@ -1,11 +1,12 @@
 <?php
 
-namespace Form;
+namespace MyVendor\ContactForm;
 
 use Aura\Html\HelperLocatorFactory;
 use Aura\Input\Builder;
 use Aura\Input\Filter;
 use MyVendor\ContactForm\Form\ContactForm;
+use MyVendor\ContactForm\Form\NameForm;
 
 class ContactFormTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,7 +18,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->form = new ContactForm(new Builder, new Filter);
+        $this->form = new NameForm(new Builder, new Filter);
         $this->form->setFormHelper(new HelperLocatorFactory);
     }
 
@@ -38,8 +39,7 @@ class ContactFormTest extends \PHPUnit_Framework_TestCase
     public function testValidationSuccess()
     {
         $pass = $this->submit([
-            'name' => 'BEAR',
-            'message'=> 'Hello'
+            'name' => 'BEAR'
         ]);
         $this->assertTrue($pass);
     }
