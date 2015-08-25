@@ -8,6 +8,7 @@ use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
 use Ray\WebFormModule\AbstractAuraForm;
 use Ray\WebFormModule\Annotation\FormValidation;
+use Ray\WebFormModule\FormInterface;
 
 class Index extends ResourceObject
 {
@@ -20,9 +21,9 @@ class Index extends ResourceObject
      * @param AbstractAuraForm $form
      *
      * @Inject
-     * @Named("contact_form")
+     * @Named("name")
      */
-    public function __construct(Form $form)
+    public function __construct(FormInterface $form)
     {
         $this->form = $form;
     }
@@ -41,11 +42,10 @@ class Index extends ResourceObject
      *
      * @return $this
      */
-    public function onPost($name, $message)
+    public function onPost($name)
     {
         $this->code = 201;
         $this['name'] = $name;
-        $this['message'] = $message;
 
         return $this;
     }
