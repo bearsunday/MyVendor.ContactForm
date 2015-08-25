@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+{% if action  %}
+    {% if action == 'contact' %}
+        <h1>201</h1>
+        <p>message [{{ message }}] was sent by [{{ name }}]</p>
+    {% elseif action == 'login' %}
+        <h1>200</h1>
+        <p>user [{{ user }}] logon</p>
+    {% endif %}
+{% else %}
+    <h1>{{ _code }}</h1>
+    {{ contact_form|raw }}
+    {{ login_form|raw }}
+{% endif %}
+</body>
+</html>
