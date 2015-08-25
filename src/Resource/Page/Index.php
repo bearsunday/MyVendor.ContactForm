@@ -55,10 +55,4 @@ class Index extends ResourceObject
         $this->code = 400;
         return $this->onGet();
     }
-
-    public function onDelete($a = '0')
-    {
-        echo $a;
-        exit;
-    }
 }
