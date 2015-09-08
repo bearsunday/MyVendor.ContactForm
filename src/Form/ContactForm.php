@@ -38,22 +38,13 @@ class ContactForm extends AbstractAuraForm
                 'name' => 'submit',
                 'value' => 'contact'
             ]);
-        /** @var $filter Filter */
-        $filter = $this->getFilter();
-        $filter->setRule(
-            'name',
-            'Name must be alphabetic only.',
-            function ($value) {
-                return ctype_alpha($value);
-            }
-        );
-        $filter->setRule(
-            'message',
-            'Message is required.',
-            function ($value) {
-                return strlen($value) > 0;
-            }
-        );
+        // name
+        $this->filter->validate('name')->isNot('blank');
+        $this->filter->validate('name')->is('alnum');
+        $this->filter->useFieldMessage('name', 'Name must be alphabetic only.');
+        // message
+        $this->filter->validate('message')->isNot('blank');
+        $this->filter->useFieldMessage('message', 'Message is required.');
     }
 
     /**

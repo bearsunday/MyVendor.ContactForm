@@ -28,15 +28,9 @@ class NameForm extends AbstractAuraForm
                 'name' => 'submit',
                 'value' => 'Submit'
             ]);
-        /** @var $filter Filter */
-        $filter = $this->getFilter();
-        $filter->setRule(
-            'name',
-            'Name must be alphabetic only.',
-            function ($value) {
-                return ctype_alpha($value);
-            }
-        );
+        $this->filter->validate('name')->isNot('blank');
+        $this->filter->validate('name')->is('alnum');
+        $this->filter->useFieldMessage('name', 'Name must be alphabetic only !!.');
     }
 
     /**
