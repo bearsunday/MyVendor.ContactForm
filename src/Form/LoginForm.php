@@ -4,9 +4,10 @@ namespace MyVendor\ContactForm\Form;
 
 use Aura\Html\Helper\Tag;
 use Ray\WebFormModule\AbstractAuraForm;
+use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\SetAntiCsrfTrait;
 
-class LoginForm extends AbstractAuraForm
+class LoginForm extends AbstractForm
 {
     // use SetAntiCsrfTrait;
 
@@ -35,22 +36,12 @@ class LoginForm extends AbstractAuraForm
                 'name' => 'submit',
                 'value' => 'login'
             ]);
-        /** @var $filter Filter */
-        $filter = $this->getFilter();
-        $filter->setRule(
-            'user',
-            'user id must be alphabetic only.',
-            function ($value) {
-                return ctype_alpha($value);
-            }
-        );
-        $filter->setRule(
-            'password',
-            'password is required.',
-            function ($value) {
-                return strlen($value) > 0;
-            }
-        );
+        // user
+        $this->filter->validate('user')->is('alnum');
+        $this->filter->useFieldMessage('user', 'user id must be alphabetic only.');
+        // password
+        $this->filter->validate('password')->isNot('blank');
+        $this->filter->useFieldMessage('password', 'password is required.');
     }
 
     /**

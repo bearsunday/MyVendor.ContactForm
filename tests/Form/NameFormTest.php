@@ -7,41 +7,34 @@ use Aura\Input\Builder;
 use Aura\Input\Filter;
 use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\NameForm;
+use Ray\WebFormModule\AbstractForm;
 
-class ContactFormTest extends \PHPUnit_Framework_TestCase
+class NameFormTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ContactForm
+     * @var AbstractForm
      */
     private $form;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->form = new NameForm(new Builder, new Filter);
-        $this->form->setFormHelper(new HelperLocatorFactory);
-    }
-
-    protected function submit(array $data)
-    {
-        $this->form->fill($data);
-        $pass = $this->form->filter();
-
-        return $pass;
+        $this->form = new NameForm;
+        $this->form->postConstruct();
     }
 
     public function testValdationFailed()
     {
-        $pass = $this->submit([]);
-        $this->assertFalse($pass);
+        $isValid = $this->form->apply([]);
+        $this->assertFalse($isValid);
     }
 
     public function testValidationSuccess()
     {
-        $pass = $this->submit([
+        $isValid = $this->form->apply([
             'name' => 'BEAR'
         ]);
-        $this->assertTrue($pass);
+        $this->assertTrue($isValid);
     }
 
     public function testHtml()
