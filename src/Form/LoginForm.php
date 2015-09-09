@@ -4,9 +4,10 @@ namespace MyVendor\ContactForm\Form;
 
 use Aura\Html\Helper\Tag;
 use Ray\WebFormModule\AbstractAuraForm;
+use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\SetAntiCsrfTrait;
 
-class LoginForm extends AbstractAuraForm
+class LoginForm extends AbstractForm
 {
     // use SetAntiCsrfTrait;
 

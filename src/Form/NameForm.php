@@ -3,9 +3,9 @@
 namespace MyVendor\ContactForm\Form;
 
 use Aura\Html\Helper\Tag;
-use Ray\WebFormModule\AbstractAuraForm;
+use Ray\WebFormModule\AbstractForm;
 
-class NameForm extends AbstractAuraForm
+class NameForm extends AbstractForm
 {
     // use SetAntiCsrfTrait;
 
