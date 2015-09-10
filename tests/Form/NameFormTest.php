@@ -2,6 +2,7 @@
 
 namespace MyVendor\ContactForm;
 
+use Aura\Filter\FilterFactory;
 use Aura\Html\HelperLocatorFactory;
 use Aura\Input\Builder;
 use Aura\Input\Filter;
@@ -20,6 +21,7 @@ class NameFormTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         $this->form = new NameForm;
+        $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
         $this->form->postConstruct();
     }
 
