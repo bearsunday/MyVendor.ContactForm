@@ -2,12 +2,11 @@
 
 namespace MyVendor\ContactForm\Form;
 
+use BEAR\Resource\Exception\BadRequestException;
 use Ray\WebFormModule\AbstractForm;
 
 class CommentFormList extends AbstractForm
 {
-    // use SetAntiCsrfTrait;
-
     /**
      * @var CommentForm
      */
@@ -36,23 +35,18 @@ class CommentFormList extends AbstractForm
         foreach ($this->ids as $id) {
             $form = clone $this->form;
             $form->setId($id);
-            $this->forms[] = $form;
+            $this->forms[$id] = $form;
         }
     }
 
     public function apply(array $data)
     {
+        if (! isset($data['id'])) {
+            throw new BadRequestException('id');
+        }
         $form = $this->forms[$data['id']];
 
         return $form->apply($data);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function submit()
-    {
-        return $_POST;
     }
 
     /**

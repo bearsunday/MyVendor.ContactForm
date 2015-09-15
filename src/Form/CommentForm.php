@@ -7,8 +7,6 @@ use Ray\WebFormModule\AbstractForm;
 
 class CommentForm extends AbstractForm
 {
-    // use SetAntiCsrfTrait;
-
     /**
      * {@inheritdoc}
      */
@@ -25,22 +23,13 @@ class CommentForm extends AbstractForm
                 'value' => 'Submit'
             ]);
         $this->filter->validate('comment')->is('alnum');
-        $this->filter->useFieldMessage('comment', 'Comment must be alphabetic only !!.');
+        $this->filter->useFieldMessage('comment', 'Comment must be alphabetic only ! ');
     }
 
     public function setId($id)
     {
         $this->setField('id', 'hidden')
             ->setAttribs(['value' => $id]);
-    }
-
-
-    /**
-     * {@inheritdoc}
-     */
-    public function submit()
-    {
-        return $_POST;
     }
 
     /**
@@ -50,7 +39,7 @@ class CommentForm extends AbstractForm
     {
         $form = $this->form([
             'method' => 'post',
-            'action' => '/list'
+            'action' => '/loop'
         ]);
         // hidden
         $form .= $this->input('id');
@@ -61,7 +50,7 @@ class CommentForm extends AbstractForm
         // submit
         $form .= $this->input('submit');
         $form .= $this->helper->tag('/form');
-
+        $form .= PHP_EOL . PHP_EOL;
         return $form;
     }
 }

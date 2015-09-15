@@ -44,16 +44,17 @@ class CommentFormListTest extends \PHPUnit_Framework_TestCase
     public function testApplyFailure()
     {
         $data = [
-            'id' => 1,
+            'id' => 2,
             'comment' => '@@invalid'
         ];
         $success = $this->form->apply($data);
         $this->assertFalse($success);
         $html = (string) $this->form;
         // error message
-        $expected = '<input type="hidden" name="id" value="2" />
+        $expected = '<form method="post" action="/loop" enctype="multipart/form-data"><input type="hidden" name="id" value="2" />
 <input id="comment" type="text" name="comment" />
-Comment must be alphabetic only !!.<input type="submit" name="submit" value="Submit" />';
+Comment must be alphabetic only ! <input type="submit" name="submit" value="Submit" />
+</form>';
         $this->assertContains($expected, $html);
         // no error message
         $expected = '<input type="hidden" name="id" value="1" />
@@ -72,3 +73,4 @@ Comment must be alphabetic only !!.<input type="submit" name="submit" value="Sub
         $this->assertTrue($success);
     }
 }
+
