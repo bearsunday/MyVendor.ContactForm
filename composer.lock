@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "53850942ace88472da6b4713b181908c",
+    "hash": "1e87fbbebe2bc885c7fb68c40f5194ce",
+    "content-hash": "c5312bf65e62f774916d2580ae441219",
     "packages": [
         {
             "name": "aura/cli",
@@ -1440,16 +1441,16 @@
         },
         {
             "name": "ray/web-form-module",
-            "version": "0.3.2",
+            "version": "0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.WebFormModule.git",
-                "reference": "0aad3bbf74bb4497353cf156b05b1368d7fd6b92"
+                "reference": "4a16330f9e6752e97d26c908917fe003b530a4ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/0aad3bbf74bb4497353cf156b05b1368d7fd6b92",
-                "reference": "0aad3bbf74bb4497353cf156b05b1368d7fd6b92",
+                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/4a16330f9e6752e97d26c908917fe003b530a4ed",
+                "reference": "4a16330f9e6752e97d26c908917fe003b530a4ed",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1475,7 @@
                 "Ray.Di module",
                 "web form"
             ],
-            "time": "2015-09-10 21:09:59"
+            "time": "2015-09-15 09:24:53"
         },
         {
             "name": "ray/web-param-module",
@@ -1561,16 +1562,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.21.2",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ddce1136beb8db29b9cd7dffa8ab518b978c9db3"
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddce1136beb8db29b9cd7dffa8ab518b978c9db3",
-                "reference": "ddce1136beb8db29b9cd7dffa8ab518b978c9db3",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
                 "shasum": ""
             },
             "require": {
@@ -1583,7 +1584,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.21-dev"
+                    "dev-master": "1.22-dev"
                 }
             },
             "autoload": {
@@ -1618,7 +1619,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-09-09 05:28:51"
+            "time": "2015-09-15 06:50:16"
         }
     ],
     "packages-dev": [],
