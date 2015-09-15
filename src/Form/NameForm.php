@@ -36,14 +36,6 @@ class NameForm extends AbstractForm
     /**
      * {@inheritdoc}
      */
-    public function submit()
-    {
-        return $_POST;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function __toString()
     {
         $form = $this->form([

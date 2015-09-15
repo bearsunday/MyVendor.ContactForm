@@ -26,6 +26,5 @@ class AppModule extends AbstractModule
         $this->bind(FormInterface::class)->annotatedWith('contact_form')->to(ContactForm::class);
         $this->bind(FormInterface::class)->annotatedWith('login_form')->to(LoginForm::class);
         $this->bind(FormInterface::class)->annotatedWith('loop')->to(CommentFormList::class);
-        $this->bind(FormInterface::class)->annotatedWith('loop')->to(CommentFormList::class);
     }
 }
