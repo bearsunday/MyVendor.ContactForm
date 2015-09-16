@@ -2,7 +2,6 @@
 
 namespace MyVendor\ContactForm\Resource\Page;
 
-use Aura\Input\Form;
 use BEAR\Resource\ResourceObject;
 use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;

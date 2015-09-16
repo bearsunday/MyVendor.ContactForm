@@ -2,13 +2,9 @@
 
 namespace MyVendor\ContactForm;
 
-use Aura\Filter\FilterFactory;
-use Aura\Html\HelperLocatorFactory;
-use Aura\Input\Builder;
-use Aura\Input\Filter;
-use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\NameForm;
 use Ray\WebFormModule\AbstractForm;
+use Ray\WebFormModule\FormFactory;
 
 class NameFormTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,9 +16,8 @@ class NameFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->form = new NameForm;
-        $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
-        $this->form->postConstruct();
+        /** @var $form NameForm */
+        $this->form = (new FormFactory())->newInstance(NameForm::class);
     }
 
     public function testValdationFailed()

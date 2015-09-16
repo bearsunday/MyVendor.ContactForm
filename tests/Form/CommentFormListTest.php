@@ -7,6 +7,7 @@ use Aura\Html\HelperLocatorFactory;
 use Aura\Input\Builder;
 use MyVendor\ContactForm\Form\CommentForm;
 use MyVendor\ContactForm\Form\CommentFormList;
+use Ray\WebFormModule\FormFactory;
 
 class CommentFormListTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,10 +19,10 @@ class CommentFormListTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $form = new CommentForm;
-        $form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
-        $form->postConstruct();
+        /** @var $form CommentForm */
+        $form = (new FormFactory)->newInstance(CommentForm::class);
         $this->form = new CommentFormList($form);
+        $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
         $this->form->postConstruct();
     }
 

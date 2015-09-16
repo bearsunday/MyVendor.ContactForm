@@ -1,8 +1,7 @@
 <?php
-
-use MyVendor\ContactForm;
 use BEAR\Package\Bootstrap;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use MyVendor\ContactForm;
 
 error_reporting(E_ALL);
 

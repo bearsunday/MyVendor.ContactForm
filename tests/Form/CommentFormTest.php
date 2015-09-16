@@ -2,10 +2,8 @@
 
 namespace MyVendor\ContactForm;
 
-use Aura\Filter\FilterFactory;
-use Aura\Html\HelperLocatorFactory;
-use Aura\Input\Builder;
 use MyVendor\ContactForm\Form\CommentForm;
+use Ray\WebFormModule\FormFactory;
 
 class CommentFormTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,9 +15,8 @@ class CommentFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->form = new CommentForm;
-        $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
-        $this->form->postConstruct();
+        /** @var $form CommentForm */
+        $this->form = (new FormFactory)->newInstance(CommentForm::class);
     }
 
     public function testSetId()
