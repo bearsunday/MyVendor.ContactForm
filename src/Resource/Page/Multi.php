@@ -22,7 +22,7 @@ class Multi extends ResourceObject
     protected $loginForm;
 
     /**
-     * @param AbstractAuraForm $contactForm
+     * @param FormInterface $contactForm
      *
      * @Inject
      * @Named("contactForm=contact_form, loginForm=login_form")

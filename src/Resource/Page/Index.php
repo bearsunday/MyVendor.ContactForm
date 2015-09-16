@@ -5,19 +5,18 @@ namespace MyVendor\ContactForm\Resource\Page;
 use BEAR\Resource\ResourceObject;
 use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
-use Ray\WebFormModule\AbstractAuraForm;
 use Ray\WebFormModule\Annotation\FormValidation;
 use Ray\WebFormModule\FormInterface;
 
 class Index extends ResourceObject
 {
     /**
-     * @var \Ray\WebFormModule\AbstractAuraForm
+     * @var FormInterface
      */
     protected $form;
 
     /**
-     * @param AbstractAuraForm $form
+     * @param FormInterface $form
      *
      * @Inject
      * @Named("name")
@@ -35,7 +34,7 @@ class Index extends ResourceObject
     }
 
     /**
-     * @FormValidation(form="form", onFailure="onFailure")
+     * @FormValidation
      *
      * @param $name
      *
@@ -49,7 +48,7 @@ class Index extends ResourceObject
         return $this;
     }
 
-    public function onFailure()
+    public function onPostValidationFailed()
     {
         $this->code = 400;
         return $this->onGet();

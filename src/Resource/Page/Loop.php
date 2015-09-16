@@ -12,12 +12,12 @@ use Ray\WebFormModule\FormInterface;
 class Loop extends ResourceObject
 {
     /**
-     * @var \Ray\WebFormModule\AbstractAuraForm
+     * @var \Ray\WebFormModule\FormInterface
      */
     protected $form;
 
     /**
-     * @param AbstractAuraForm $form
+     * @param FormInterface $form
      *
      * @Inject
      * @Named("loop")
@@ -35,7 +35,7 @@ class Loop extends ResourceObject
     }
 
     /**
-     * @FormValidation(form="form", onFailure="onFailure")
+     * @FormValidation
      *
      * @param $name
      *
@@ -49,7 +49,7 @@ class Loop extends ResourceObject
         return $this;
     }
 
-    public function onFailure()
+    public function onPostValidationFailed()
     {
         $this->code = 400;
         return $this->onGet();
