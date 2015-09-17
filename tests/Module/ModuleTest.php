@@ -1,11 +1,11 @@
 <?php
 
-namespace MyVendor\ContactForm;
+namespace MyVendor\ContactForm\Module;
 
 use BEAR\Package\Bootstrap;
 use BEAR\Sunday\Extension\Application\AbstractApp;
 
-class AppModuleTest extends \PHPUnit_Framework_TestCase
+class ModuleTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Available contexts
@@ -26,9 +26,9 @@ class AppModuleTest extends \PHPUnit_Framework_TestCase
      *
      * @dataProvider contextsProvider
      */
-    public function testNewApp($contexts)
+    public function testGetApp($contexts)
     {
-        $app = (new Bootstrap())->getApp(__NAMESPACE__, $contexts);
+        $app = (new Bootstrap())->getApp('MyVendor\ContactForm', $contexts);
         $this->assertInstanceOf(AbstractApp::class, $app);
     }
 }
