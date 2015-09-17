@@ -2,6 +2,8 @@
 
 namespace MyVendor\ContactForm\Resource\Page;
 
+use BEAR\Resource\Exception\BadRequestException;
+
 class MultiTest extends \PHPUnit_Framework_TestCase
 {
     const URL = 'page://self/multi';
@@ -81,5 +83,15 @@ class MultiTest extends \PHPUnit_Framework_TestCase
         $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
         $this->assertSame(400, $page->code);
     }
-
+    public function testOnPostNoSubmit()
+    {
+        $this->setExpectedException(BadRequestException::class);
+        $query = [
+            'login' => [
+                'user' => '',
+                'password' => ''
+            ]
+        ];
+        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+    }
 }
