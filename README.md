@@ -1,4 +1,9 @@
 # MyVendor.ContactForm
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ray-di/Ray.WebFormModule/badges/quality-score.png?b=1.x)](https://scrutinizer-ci.com/g/ray-di/Ray.WebFormModule/?branch=1.x)
+[![Code Coverage](https://scrutinizer-ci.com/g/ray-di/Ray.WebFormModule/badges/coverage.png?b=1.x)](https://scrutinizer-ci.com/g/ray-di/Ray.WebFormModule/?branch=1.x)
+[![Build Status](https://travis-ci.org/bearsunday/MyVendor.ContactForm.svg?branch=master)](https://travis-ci.org/bearsunday/MyVendor.ContactForm)
+
 Web form sample application
 
 ## How to test and run
