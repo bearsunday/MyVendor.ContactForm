@@ -6,7 +6,7 @@ use BEAR\Resource\Exception\BadRequestException;
 
 class MultiTest extends \PHPUnit_Framework_TestCase
 {
-    const URL = 'page://self/multi';
+    const URI = 'page://self/multi';
 
     /**
      * @var \BEAR\Resource\ResourceInterface
@@ -21,7 +21,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
 
     public function testOnGet()
     {
-        $page = $this->resource->get->uri(self::URL)->withQuery([])->eager->request();
+        $page = $this->resource->get->uri(self::URI)->withQuery([])->eager->request();
         $this->assertSame(200, $page->code);
         $this->assertContains('</html>', (string) $page);
         $this->assertArrayHasKey('contact_form', $page->body);
@@ -39,7 +39,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
                 'message' => 'nice'
             ]
         ];
-        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
         $this->assertSame(201, $page->code);
         $this->assertSame('contact', $page['action']);
     }
@@ -53,7 +53,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
                 'message' => '@@invalid'
             ]
         ];
-        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
         $this->assertSame(400, $page->code);
     }
 
@@ -66,7 +66,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
                 'password' => 'secret'
             ]
         ];
-        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
         $this->assertSame(200, $page->code);
         $this->assertSame('login', $page['action']);
     }
@@ -80,7 +80,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
                 'password' => ''
             ]
         ];
-        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
         $this->assertSame(400, $page->code);
     }
     public function testOnPostNoSubmit()
@@ -92,6 +92,6 @@ class MultiTest extends \PHPUnit_Framework_TestCase
                 'password' => ''
             ]
         ];
-        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
     }
 }
