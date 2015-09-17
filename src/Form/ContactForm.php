@@ -8,7 +8,7 @@ use Ray\WebFormModule\SubmitInterface;
 
 class ContactForm extends AbstractForm implements SubmitInterface
 {
-//     use SetAntiCsrfTrait;
+    //     use SetAntiCsrfTrait;
 
     /**
      * {@inheritdoc}
@@ -30,7 +30,7 @@ class ContactForm extends AbstractForm implements SubmitInterface
                 'name' => 'contact[message]',
                 'cols' => 40,
                 'rows' => 5,
-                'class'=> 'form-control',
+                'class' => 'form-control',
                 'placeholder' => 'Message here'
             ]);
         $this->setField('submit', 'submit')

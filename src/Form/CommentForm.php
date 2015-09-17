@@ -51,6 +51,7 @@ class CommentForm extends AbstractForm
         $form .= $this->input('submit');
         $form .= $this->helper->tag('/form');
         $form .= PHP_EOL . PHP_EOL;
+
         return $form;
     }
 }

@@ -23,7 +23,7 @@ class CommentFormTest extends \PHPUnit_Framework_TestCase
     {
         $this->form->setId(1);
         $expected = '<input type="hidden" name="id" value="1" />';
-        $this->assertContains($expected, (string)$this->form);
+        $this->assertContains($expected, (string) $this->form);
     }
 
     public function testApplyFailure()

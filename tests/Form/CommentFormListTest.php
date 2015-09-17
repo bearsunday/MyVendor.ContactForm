@@ -7,8 +7,8 @@ use Aura\Html\HelperLocatorFactory;
 use Aura\Input\Builder;
 use BEAR\Resource\Exception\BadRequestException;
 use MyVendor\ContactForm\Form\CommentForm;
-use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\CommentFormList;
+use MyVendor\ContactForm\Form\ContactForm;
 use Ray\WebFormModule\FormFactory;
 
 class CommentFormListTest extends \PHPUnit_Framework_TestCase
@@ -28,10 +28,9 @@ class CommentFormListTest extends \PHPUnit_Framework_TestCase
         $this->form->postConstruct();
     }
 
-
     public function testString()
     {
-        $html = (string)$this->form;
+        $html = (string) $this->form;
         $expected1 = '<input type="hidden" name="id" value="1" />';
         $expected2 = '<input type="hidden" name="id" value="2" />';
         $expected3 = '<input type="hidden" name="id" value="3" />';
@@ -52,7 +51,7 @@ class CommentFormListTest extends \PHPUnit_Framework_TestCase
         ];
         $success = $this->form->apply($data);
         $this->assertFalse($success);
-        $html = (string)$this->form;
+        $html = (string) $this->form;
         // error message
         $expected = '<form method="post" action="/loop" enctype="multipart/form-data"><input type="hidden" name="id" value="2" />
 <input id="comment" type="text" name="comment" />
@@ -85,7 +84,6 @@ Comment must be alphabetic only ! <input type="submit" name="submit" value="Subm
         $this->form->apply($data);
     }
 }
-
 
 /**
  * <form method="post" action="/multi" enctype="multipart/form-data"><div class="form-group"><div class="form-group"><div class="form-group"><label for="name">Name:</label>

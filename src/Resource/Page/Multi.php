@@ -88,6 +88,7 @@ class Multi extends ResourceObject
     public function onFailure()
     {
         $this->code = 400;
+
         return $this->onGet();
     }
 }

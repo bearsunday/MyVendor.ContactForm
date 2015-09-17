@@ -4,8 +4,8 @@ namespace MyVendor\ContactForm\Module;
 
 use BEAR\Package\PackageModule;
 use MyVendor\ContactForm\Form\CommentForm;
-use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\CommentFormList;
+use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\LoginForm;
 use MyVendor\ContactForm\Form\NameForm;
 use Ray\Di\AbstractModule;

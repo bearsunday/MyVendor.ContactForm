@@ -52,6 +52,7 @@ class Loop extends ResourceObject
     public function onPostValidationFailed()
     {
         $this->code = 400;
+
         return $this->onGet();
     }
 }

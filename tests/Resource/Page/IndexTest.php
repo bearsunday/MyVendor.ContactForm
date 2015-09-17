@@ -4,7 +4,6 @@ namespace MyVendor\ContactForm\Resource\Page;
 
 class IndexTest extends \PHPUnit_Framework_TestCase
 {
-
     const URL = 'page://self/index';
 
     /**
