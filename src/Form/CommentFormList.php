@@ -8,12 +8,12 @@ use Ray\WebFormModule\AbstractForm;
 class CommentFormList extends AbstractForm
 {
     /**
-     * @var CommentForm
+     * @var ContactForm
      */
     private $form;
 
     /**
-     * @var CommentForm[]
+     * @var ContactForm[]
      */
     private $forms;
 

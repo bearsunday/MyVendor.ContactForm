@@ -2,10 +2,9 @@
 
 namespace MyVendor\ContactForm\Resource\Page;
 
-class IndexTest extends \PHPUnit_Framework_TestCase
+class LoopTest extends \PHPUnit_Framework_TestCase
 {
-
-    const URL = 'page://self/index';
+    const URL = 'page://self/loop';
 
     /**
      * @var \BEAR\Resource\ResourceInterface
@@ -20,8 +19,7 @@ class IndexTest extends \PHPUnit_Framework_TestCase
 
     public function testOnGet()
     {
-        $query = ['name' => 'koriym'];
-        $page = $this->resource->get->uri(self::URL)->withQuery($query)->eager->request();
+        $page = $this->resource->get->uri(self::URL)->eager->request();
         $this->assertSame(200, $page->code);
         $this->assertContains('</html>', (string) $page);
         $this->assertArrayHasKey('form', $page->body);
@@ -29,17 +27,23 @@ class IndexTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('</form>', $form);
     }
 
-    public function testOnPostValidationFailed()
-    {
-        $query = ['name' => ''];
-        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
-        $this->assertSame(400, $page->code);
-    }
-
     public function testOnPost()
     {
-        $query = ['name' => 'koriym'];
+        $query = [
+            'id' => 1,
+            'comment' => 'nice'
+        ];
         $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
         $this->assertSame(201, $page->code);
+    }
+
+    public function testOnPostValidationFailed()
+    {
+        $query = [
+            'id' => 1,
+            'comment' => ''
+        ];
+        $page = $this->resource->post->uri(self::URL)->withQuery($query)->eager->request();
+        $this->assertSame(400, $page->code);
     }
 }

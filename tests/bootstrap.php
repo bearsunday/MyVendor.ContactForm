@@ -13,5 +13,5 @@ $_ENV['TEST_DIR'] = __DIR__;
 $_ENV['TMP_DIR'] = __DIR__ . '/tmp';
 
 // set the resource client
-$app = (new Bootstrap)->getApp('MyVendor\ContactForm', 'app');
+$app = (new Bootstrap)->getApp('MyVendor\ContactForm', 'html-app');
 $GLOBALS['RESOURCE'] = $app->resource;
