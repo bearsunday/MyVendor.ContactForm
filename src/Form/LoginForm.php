@@ -45,6 +45,8 @@ class LoginForm extends AbstractForm implements SubmitInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @codeCoverageIgnore
      */
     public function submit()
     {

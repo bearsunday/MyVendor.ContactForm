@@ -44,13 +44,11 @@ class Multi extends ResourceObject
     public function onPost($submit, $contact = [], $login = [])
     {
         if ($submit === 'contact') {
-            return $this->contacForm($contact['name'], $contact['message']);
+            return $this->contactForm($contact['name'], $contact['message']);
         }
         if ($submit === 'login') {
             return $this->login($login['user'], $login['password']);
         }
-
-        return $this;
     }
 
     /**
@@ -60,7 +58,7 @@ class Multi extends ResourceObject
      *
      * @return $this
      */
-    public function contacForm($name, $message)
+    public function contactForm($name, $message)
     {
         $this->code = 201;
         $this['action'] = 'contact';

@@ -49,6 +49,8 @@ class ContactForm extends AbstractForm implements SubmitInterface
 
     /**
      * {@inheritdoc}
+     *
+     * @codeCoverageIgnore
      */
     public function submit()
     {
