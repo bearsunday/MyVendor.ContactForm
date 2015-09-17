@@ -84,37 +84,3 @@ Comment must be alphabetic only ! <input type="submit" name="submit" value="Subm
         $this->form->apply($data);
     }
 }
-
-/**
- * <form method="post" action="/multi" enctype="multipart/form-data"><div class="form-group"><div class="form-group"><div class="form-group"><label for="name">Name:</label>
-<input id="contact[name]" type="text" name="contact[name]" size="20" maxlength="20" class="form-control" placeholder="Your Name" />
-</div>
-<div class="form-group"><label for="message">Message:</label>
-<textarea id="contact[message]" name="contact[message]" cols="40" rows="5" class="form-control" placeholder="Message here"></textarea></div>
-<input type="submit" name="submit" value="contact" />
-</form><form method="post" action="/multi" enctype="multipart/form-data"><div class="form-group"><div class="form-group"><div class="form-group"><label for="name">Name:</label>
-<input id="contact[name]" type="text" name="contact[name]" size="20" maxlength="20" class="form-control" placeholder="Your Name" />
-</div>
-<div class="form-group"><label for="message">Message:</label>
-<textarea id="contact[message]" name="contact[message]" cols="40" rows="5" class="form-control" placeholder="Message here"></textarea></div>
-<input type="submit" name="submit" value="contact" />
-</form><form method="post" action="/multi" enctype="multipart/form-data"><div class="form-group"><div class="form-group"><div class="form-group"><label for="name">Name:</label>
-<input id="contact[name]" type="text" name="contact[name]" size="20" maxlength="20" class="form-control" placeholder="Your Name" />
-</div>
-<div class="form-group"><label for="message">Message:</label>
-<textarea id="contact[message]" name="contact[message]" cols="40" rows="5" class="form-control" placeholder="Message here"></textarea></div>
-<input type="submit" name="submit" value="contact" />
-</form><form method="post" action="/multi" enctype="multipart/form-data"><div class="form-group"><div class="form-group"><div class="form-group"><label for="name">Name:</label>
-<input id="contact[name]" type="text" name="contact[name]" size="20" maxlength="20" class="form-control" placeholder="Your Name" />
-</div>
-<div class="form-group"><label for="message">Message:</label>
-<textarea id="contact[message]" name="contact[message]" cols="40" rows="5" class="form-control" placeholder="Message here"></textarea></div>
-<input type="submit" name="submit" value="contact" />
-</form><form method="post" action="/multi" enctype="multipart/form-data"><div class="form-group"><div class="form-group"><div class="form-group"><label for="name">Name:</label>
-<input id="contact[name]" type="text" name="contact[name]" size="20" maxlength="20" class="form-control" placeholder="Your Name" />
-</div>
-<div class="form-group"><label for="message">Message:</label>
-<textarea id="contact[message]" name="contact[message]" cols="40" rows="5" class="form-control" placeholder="Message here"></textarea></div>
-<input type="submit" name="submit" value="contact" />
-</form>
- */

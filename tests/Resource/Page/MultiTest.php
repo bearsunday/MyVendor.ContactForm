@@ -92,6 +92,6 @@ class MultiTest extends \PHPUnit_Framework_TestCase
                 'password' => ''
             ]
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
     }
 }
