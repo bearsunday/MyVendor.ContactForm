@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 {% if _code == 100 %}
     <h1>100</h1>
-    <div>Name:{{ name }}</div>
-    <div>Number:{{ number }}</div>
+    <b>OK ?</b>
+    <div>{{ name }}</div>
+    <div>{{ number }}</div>
     {{ form|raw }}
 {% elseif _code == 201 %}
     <h1>201</h1>
-
-    <p>Created:</p>
-    <div>Name:{{ name }}</div>
-    <div>Number:{{ number }}</div>
+    <div>{{ name }}</div>
+    <div>{{ number }}</div>
 {% else %}
     <h1>{{ _code }}</h1>
     {{ form|raw }}

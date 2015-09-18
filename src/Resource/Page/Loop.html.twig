@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
 {% if _code == 201 %}
     <h1>201</h1>
-    <p>Comment: {{ comment }}</p>
+    <p>{{ comment }}</p>
 {% else %}
     <h1>{{ _code }}</h1>
     {{ form|raw }}
