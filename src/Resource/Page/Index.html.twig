@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>BEAR.Sunday Form Sample</title>
 </head>
+
 <body>
-{% if _code == 201 %}
-    <h1>201</h1>
-    <p>Name: {{ name }}</p>
-{% else %}
-    <h1>{{ _code }}</h1>
-    {{ form|raw }}
-{% endif %}
+<h1>Form sample</h1>
+<ul>
+    <li><a href="/min">/min</a></li>
+    <li><a href="/multi">/multi</a></li>
+    <li><a href="/loop">/loop</a></li>
+    <li><a href="/preview">/preview</a></li>
+</ul>
 </body>
-</html>
 </html>

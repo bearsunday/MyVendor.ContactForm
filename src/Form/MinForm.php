@@ -5,7 +5,7 @@ namespace MyVendor\ContactForm\Form;
 use Aura\Html\Helper\Tag;
 use Ray\WebFormModule\AbstractForm;
 
-class NameForm extends AbstractForm
+class MinForm extends AbstractForm
 {
     // use SetAntiCsrfTrait;
 
@@ -40,7 +40,7 @@ class NameForm extends AbstractForm
     {
         $form = $this->form([
             'method' => 'post',
-            'action' => '/'
+            'action' => '/min'
         ]);
         // name
         /** @var $tag Tag */
