@@ -2,9 +2,9 @@
 
 namespace MyVendor\ContactForm\Resource\Page;
 
-class IndexTest extends \PHPUnit_Framework_TestCase
+class MinTest extends \PHPUnit_Framework_TestCase
 {
-    const URI = 'page://self/index';
+    const URI = 'page://self/min';
 
     /**
      * @var \BEAR\Resource\ResourceInterface

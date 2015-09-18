@@ -2,7 +2,7 @@
 
 namespace MyVendor\ContactForm;
 
-use MyVendor\ContactForm\Form\NameForm;
+use MyVendor\ContactForm\Form\MinForm;
 use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\FormFactory;
 
@@ -16,8 +16,8 @@ class NameFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        /* @var $form NameForm */
-        $this->form = (new FormFactory())->newInstance(NameForm::class);
+        /* @var $form MinForm */
+        $this->form = (new FormFactory())->newInstance(MinForm::class);
     }
 
     public function testValdationFailed()
