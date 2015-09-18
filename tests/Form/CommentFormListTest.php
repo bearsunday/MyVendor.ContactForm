@@ -14,14 +14,14 @@ use Ray\WebFormModule\FormFactory;
 class CommentFormListTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var ContactForm
+     * @var CommentFormList
      */
     private $form;
 
     protected function setUp()
     {
         parent::setUp();
-        /** @var $form ContactForm */
+        /** @var $form CommentForm */
         $form = (new FormFactory)->newInstance(CommentForm::class);
         $this->form = new CommentFormList($form);
         $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
@@ -53,10 +53,9 @@ class CommentFormListTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($success);
         $html = (string) $this->form;
         // error message
-        $expected = '<form method="post" action="/loop" enctype="multipart/form-data"><input type="hidden" name="id" value="2" />
-<input id="comment" type="text" name="comment" />
-Comment must be alphabetic only ! <input type="submit" name="submit" value="Submit" />
-</form>';
+        $expected = '<input type="hidden" name="id" value="2" />
+<input id="comment" type="text" name="comment" value="@@invalid" />
+Comment must be alphabetic only ! ';
         $this->assertContains($expected, $html);
         // no error message
         $expected = '<input type="hidden" name="id" value="1" />
