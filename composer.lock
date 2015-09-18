@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7da3e077d1d3b89b62a8a513c12bda25",
+    "hash": "7e31685a8a60df4f74f546a9b05dd206",
     "packages": [
         {
             "name": "aura/cli",
@@ -1036,7 +1036,7 @@
         },
         {
             "name": "madapaja/twig-module",
-            "version": "1.x-dev",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/madapaja/Madapaja.TwigModule.git",
@@ -1086,16 +1086,16 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.8.16",
+            "version": "2.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "9a8b6c6b259924a7c80021da8ba167766a9fd5b6"
+                "reference": "b87da5f63a76e9615a0c74fcf168657b1ea7e41d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/9a8b6c6b259924a7c80021da8ba167766a9fd5b6",
-                "reference": "9a8b6c6b259924a7c80021da8ba167766a9fd5b6",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/b87da5f63a76e9615a0c74fcf168657b1ea7e41d",
+                "reference": "b87da5f63a76e9615a0c74fcf168657b1ea7e41d",
                 "shasum": ""
             },
             "require": {
@@ -1136,7 +1136,7 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "time": "2015-08-31 13:30:54"
+            "time": "2015-09-17 14:45:21"
         },
         {
             "name": "nikic/php-parser",
@@ -1440,16 +1440,16 @@
         },
         {
             "name": "ray/web-form-module",
-            "version": "0.5.0",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.WebFormModule.git",
-                "reference": "1afcfd2a938dcad8dbf7682f8dfd28cc4f7a1951"
+                "reference": "8b3c1d68622985ae185443b1ec2c5d8055266d60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/1afcfd2a938dcad8dbf7682f8dfd28cc4f7a1951",
-                "reference": "1afcfd2a938dcad8dbf7682f8dfd28cc4f7a1951",
+                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/8b3c1d68622985ae185443b1ec2c5d8055266d60",
+                "reference": "8b3c1d68622985ae185443b1ec2c5d8055266d60",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1474,7 @@
                 "Ray.Di module",
                 "web form"
             ],
-            "time": "2015-09-16 03:08:05"
+            "time": "2015-09-18 12:58:34"
         },
         {
             "name": "ray/web-param-module",
@@ -1624,10 +1624,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "madapaja/twig-module": 20,
-        "foa/filter-input-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

@@ -16,7 +16,7 @@ class LoginFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        /** @var $form ContactForm */
+        /* @var $form ContactForm */
         $this->form = (new FormFactory())->newInstance(LoginForm::class);
     }
 

@@ -37,6 +37,7 @@ class CommentFormList extends AbstractForm
             $form->setId($id);
             $this->forms[$id] = $form;
         }
+        unset($this->form);
     }
 
     public function apply(array $data)
