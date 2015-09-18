@@ -16,9 +16,11 @@ phpunit
 php -S 127.0.0.1:8080 var/www/index.php
 ```
 
- * http://127.0.0.1:8080 for simple single form page.
+ * http://127.0.0.1:8080/ index
+ * http://127.0.0.1:8080/min mim form page
  * http://127.0.0.1:8080/multi for multiple form page.
  * http://127.0.0.1:8080/loop for repeated input element form page.
+ * http://127.0.0.1:8080/preview for preview form page.
  
 ## 100% application test coverage
 
