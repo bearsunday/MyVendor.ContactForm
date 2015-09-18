@@ -8,6 +8,8 @@ use MyVendor\ContactForm\Form\CommentFormList;
 use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\LoginForm;
 use MyVendor\ContactForm\Form\NameForm;
+use MyVendor\ContactForm\Form\PreviewForm;
+use MyVendor\ContactForm\Resource\Page\Preview;
 use Ray\Di\AbstractModule;
 use Ray\WebFormModule\AuraInputModule;
 use Ray\WebFormModule\FormInterface;
@@ -27,5 +29,6 @@ class AppModule extends AbstractModule
         $this->bind(FormInterface::class)->annotatedWith('contact_form')->to(ContactForm::class);
         $this->bind(FormInterface::class)->annotatedWith('login_form')->to(LoginForm::class);
         $this->bind(FormInterface::class)->annotatedWith('loop')->to(CommentFormList::class);
+        $this->bind(FormInterface::class)->annotatedWith('preview')->to(PreviewForm::class);
     }
 }

@@ -8,7 +8,6 @@
         "madapaja/twig-module": "~1.0"
     },
     "require-dev": {
-      "bear/qatools": "~1.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

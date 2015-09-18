@@ -16,7 +16,7 @@ class NameFormTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        /** @var $form NameForm */
+        /* @var $form NameForm */
         $this->form = (new FormFactory())->newInstance(NameForm::class);
     }
 

@@ -44,7 +44,7 @@ class CommentForm extends AbstractForm
         // hidden
         $form .= $this->input('id');
         // name
-        /** @var $tag Tag */
+        /* @var $tag Tag */
         $form .= $this->input('comment');
         $form .= $this->error('comment');
         // submit
