@@ -13,15 +13,15 @@ class CommentForm extends AbstractForm
     public function init()
     {
         $this->setField('comment')
-            ->setAttribs([
-                'id' => 'comment',
-                'name' => 'comment'
-            ]);
+             ->setAttribs([
+                 'id' => 'comment',
+                 'name' => 'comment'
+             ]);
         $this->setField('submit', 'submit')
-            ->setAttribs([
-                'name' => 'submit',
-                'value' => 'Submit'
-            ]);
+             ->setAttribs([
+                 'name' => 'submit',
+                 'value' => 'Submit'
+             ]);
         $this->filter->validate('comment')->is('alnum');
         $this->filter->useFieldMessage('comment', 'Comment must be alphabetic only ! ');
     }
@@ -29,7 +29,7 @@ class CommentForm extends AbstractForm
     public function setId($id)
     {
         $this->setField('id', 'hidden')
-            ->setAttribs(['value' => $id]);
+            ->setValue((string) $id);
     }
 
     /**
