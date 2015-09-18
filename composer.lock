@@ -1440,16 +1440,16 @@
         },
         {
             "name": "ray/web-form-module",
-            "version": "0.5.1",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.WebFormModule.git",
-                "reference": "f2d0e3ae79c9d7171ac980ca72c36263be0e132a"
+                "reference": "8b3c1d68622985ae185443b1ec2c5d8055266d60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/f2d0e3ae79c9d7171ac980ca72c36263be0e132a",
-                "reference": "f2d0e3ae79c9d7171ac980ca72c36263be0e132a",
+                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/8b3c1d68622985ae185443b1ec2c5d8055266d60",
+                "reference": "8b3c1d68622985ae185443b1ec2c5d8055266d60",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1474,7 @@
                 "Ray.Di module",
                 "web form"
             ],
-            "time": "2015-09-18 03:36:10"
+            "time": "2015-09-18 12:58:34"
         },
         {
             "name": "ray/web-param-module",
