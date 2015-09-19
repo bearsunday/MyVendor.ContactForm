@@ -33,8 +33,6 @@ try {
     $page()->transfer($app->responder, $_SERVER);
     exit(0);
 } catch (\Exception $e) {
-    echo $e;
-    exit;
     $app->error->handle($e, $request)->transfer();
     exit(1);
 }
