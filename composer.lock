@@ -404,16 +404,16 @@
         },
         {
             "name": "bear/package",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.Package.git",
-                "reference": "3a54e2c09835ccd4e345cd517326bacad35c973d"
+                "reference": "80dcc4beb9a3bf66422760a5775e2998aa04b3b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bearsunday/BEAR.Package/zipball/3a54e2c09835ccd4e345cd517326bacad35c973d",
-                "reference": "3a54e2c09835ccd4e345cd517326bacad35c973d",
+                "url": "https://api.github.com/repos/bearsunday/BEAR.Package/zipball/80dcc4beb9a3bf66422760a5775e2998aa04b3b2",
+                "reference": "80dcc4beb9a3bf66422760a5775e2998aa04b3b2",
                 "shasum": ""
             },
             "require": {
@@ -454,7 +454,7 @@
                 "hypermedia",
                 "rest"
             ],
-            "time": "2015-08-24 12:01:39"
+            "time": "2015-09-19 01:48:47"
         },
         {
             "name": "bear/query-repository",
