@@ -17,15 +17,9 @@ class PreviewForm extends AbstractForm
     {
         $this->setField('is_preview', 'hidden')
              ->setValue("1");
-        $this->setField('name')
-            ->setAttribs([
-                'id' => 'name',
-                'name' => 'name',
-                'size' => 20,
-                'maxlength' => 20,
-                'class' => 'form-control',
-                'placeholder' => 'Your Name'
-            ]);
+        $this->setField('name[0]');
+        $this->setField('name[1]');
+
         $this->setField('number', 'radio')
              ->setValue('10')
              ->setOptions([
@@ -44,9 +38,6 @@ class PreviewForm extends AbstractForm
                 'name' => 'submit',
                 'value' => 'Submit'
             ]);
-        $this->filter->validate('name')->isNot('blank');
-        $this->filter->validate('name')->is('alnum');
-        $this->filter->useFieldMessage('name', 'Name must be alphabetic only !!.');
     }
 
     /**
@@ -59,7 +50,8 @@ class PreviewForm extends AbstractForm
         $html .= $this->input('is_preview');
         // name
         /* @var $tag Tag */
-        $html .= $this->inputGroup('name', 'Name');
+        $html .= $this->inputGroup('name[0]', 'Name0');
+        $html .= $this->inputGroup('name[1]', 'Name1');
         $html .= $this->inputGroup('number', 'Number');
         // submit
         $html .= $this->input('submit');
@@ -76,7 +68,8 @@ class PreviewForm extends AbstractForm
     public function setValues(ResourceObject $ro)
     {
         $input = $this->getValue(); // input values
-        $ro['name'] = $input['name'];
+        $ro['name[0]'] = $input['name[0]'];
+        $ro['name[1]'] = $input['name[1]'];
         // number
         $number = $this->get('number');
         $ro['number'] = $number["options"][$number["value"]]; // radio
@@ -119,7 +112,6 @@ class PreviewForm extends AbstractForm
         /** @var $tag Tag */
         $tag = $this->helper->get('tag');
         $html = $tag('div', ['class' => 'form-group']);
-        $html .= $tag('div', ['class' => 'form-group']);
         $html .= $tag('label', ['for' => $input]);
         $html .= $label;
         $html .= $tag('/label') . PHP_EOL;
