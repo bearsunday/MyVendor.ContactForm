@@ -498,16 +498,16 @@
         },
         {
             "name": "bear/resource",
-            "version": "1.1.2",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.Resource.git",
-                "reference": "aadab7be839fa0e7e4ad6b9fb8dfe20609267439"
+                "reference": "d6a29de4769f4e59aadcea587a78b10d71d2e1c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bearsunday/BEAR.Resource/zipball/aadab7be839fa0e7e4ad6b9fb8dfe20609267439",
-                "reference": "aadab7be839fa0e7e4ad6b9fb8dfe20609267439",
+                "url": "https://api.github.com/repos/bearsunday/BEAR.Resource/zipball/d6a29de4769f4e59aadcea587a78b10d71d2e1c8",
+                "reference": "d6a29de4769f4e59aadcea587a78b10d71d2e1c8",
                 "shasum": ""
             },
             "require": {
@@ -548,7 +548,7 @@
                 "protocol",
                 "rest"
             ],
-            "time": "2015-06-03 02:06:48"
+            "time": "2015-10-05 17:44:42"
         },
         {
             "name": "bear/sunday",
@@ -1140,16 +1140,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418"
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/196f177cfefa0f1f7166c0a05d8255889be12418",
-                "reference": "196f177cfefa0f1f7166c0a05d8255889be12418",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
+                "reference": "f78af2c9c86107aa1a34cd1dbb5bbe9eeb0d9f51",
                 "shasum": ""
             },
             "require": {
@@ -1181,7 +1181,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-07-14 17:31:05"
+            "time": "2015-09-19 14:15:08"
         },
         {
             "name": "nocarrier/hal",
@@ -1356,16 +1356,16 @@
         },
         {
             "name": "ray/compiler",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.Compiler.git",
-                "reference": "d34812ab7a2c03cfb7a8319f7888086a8d24e69e"
+                "reference": "605e347e9b0077a13e111f51a5ad964004214b42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.Compiler/zipball/d34812ab7a2c03cfb7a8319f7888086a8d24e69e",
-                "reference": "d34812ab7a2c03cfb7a8319f7888086a8d24e69e",
+                "url": "https://api.github.com/repos/ray-di/Ray.Compiler/zipball/605e347e9b0077a13e111f51a5ad964004214b42",
+                "reference": "605e347e9b0077a13e111f51a5ad964004214b42",
                 "shasum": ""
             },
             "require": {
@@ -1390,7 +1390,7 @@
                 "code-gen",
                 "compiler"
             ],
-            "time": "2015-05-26 02:33:24"
+            "time": "2015-09-29 03:34:17"
         },
         {
             "name": "ray/di",
@@ -1440,16 +1440,16 @@
         },
         {
             "name": "ray/web-form-module",
-            "version": "0.5.2",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.WebFormModule.git",
-                "reference": "8b3c1d68622985ae185443b1ec2c5d8055266d60"
+                "reference": "46060d5057437b409011c376f542e9d0d4632ee3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/8b3c1d68622985ae185443b1ec2c5d8055266d60",
-                "reference": "8b3c1d68622985ae185443b1ec2c5d8055266d60",
+                "url": "https://api.github.com/repos/ray-di/Ray.WebFormModule/zipball/46060d5057437b409011c376f542e9d0d4632ee3",
+                "reference": "46060d5057437b409011c376f542e9d0d4632ee3",
                 "shasum": ""
             },
             "require": {
@@ -1474,7 +1474,7 @@
                 "Ray.Di module",
                 "web form"
             ],
-            "time": "2015-09-18 12:58:34"
+            "time": "2015-09-25 07:35:13"
         },
         {
             "name": "ray/web-param-module",
@@ -1561,16 +1561,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.22.1",
+            "version": "v1.22.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
+                "reference": "79249fc8c9ff62e41e217e0c630e2e00bcadda6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
-                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/79249fc8c9ff62e41e217e0c630e2e00bcadda6a",
+                "reference": "79249fc8c9ff62e41e217e0c630e2e00bcadda6a",
                 "shasum": ""
             },
             "require": {
@@ -1618,7 +1618,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-09-15 06:50:16"
+            "time": "2015-09-22 13:59:32"
         }
     ],
     "packages-dev": [],
