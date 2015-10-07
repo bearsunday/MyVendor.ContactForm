@@ -6,7 +6,7 @@ use Aura\Html\Helper\Tag;
 use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\SubmitInterface;
 
-class ContactForm extends AbstractForm implements SubmitInterface
+class ContactForm extends AbstractForm
 {
     //     use SetAntiCsrfTrait;
 
@@ -45,16 +45,6 @@ class ContactForm extends AbstractForm implements SubmitInterface
         // message
         $this->filter->validate('message')->isNot('blank');
         $this->filter->useFieldMessage('message', 'Message is required.');
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @codeCoverageIgnore
-     */
-    public function submit()
-    {
-        return $_POST['contact'];
     }
 
     /**

@@ -6,7 +6,7 @@ use Aura\Html\Helper\Tag;
 use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\SubmitInterface;
 
-class LoginForm extends AbstractForm implements SubmitInterface
+class LoginForm extends AbstractForm
 {
     // use SetAntiCsrfTrait;
 
@@ -41,16 +41,6 @@ class LoginForm extends AbstractForm implements SubmitInterface
         // password
         $this->filter->validate('password')->isNot('blank');
         $this->filter->useFieldMessage('password', 'password is required.');
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @codeCoverageIgnore
-     */
-    public function submit()
-    {
-        return $_POST['login'];
     }
 
     /**
