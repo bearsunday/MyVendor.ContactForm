@@ -22,8 +22,3 @@ php -S 127.0.0.1:8080 var/www/index.php
  * http://127.0.0.1:8080/loop for repeated input element form page.
  * http://127.0.0.1:8080/preview for preview form page.
  
-## 100% application test coverage
-
- * [Resource](https://github.com/bearsunday/MyVendor.ContactForm/tree/master/tests/Resource)
- * [Form](https://github.com/bearsunday/MyVendor.ContactForm/tree/master/tests/Form)
- * [Module](https://github.com/bearsunday/MyVendor.ContactForm/tree/master/tests/Module)
