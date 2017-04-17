@@ -41,12 +41,13 @@ class Preview extends ResourceObject
      *
      * @return $this
      */
-    public function onPost($name, $number, $is_preview = '0')
+    public function onPost($name = [], $number, $is_preview = '0')
     {
         if ($is_preview) {
             $this->code = 100; // continue
             $data = [
-                'name' => $name,
+                'name[0]' => $name[0],
+                'name[1]' => $name[1],
                 'number' => $number
             ];
             $this['form'] = $this->form->getHiddenForm($data);
@@ -55,7 +56,8 @@ class Preview extends ResourceObject
             return $this;
         }
         $this->code = 201; // created
-        $this['name'] = $name;
+        $this['name0'] = $name[0];
+        $this['name1'] = $name[1];
         $this['number'] = $number;
 
         return $this;
