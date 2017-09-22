@@ -2,7 +2,9 @@
 
 namespace MyVendor\ContactForm\Resource\Page;
 
-class LoopTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class LoopTest extends TestCase
 {
     const URI = 'page://self/loop';
 

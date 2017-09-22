@@ -4,8 +4,9 @@ namespace MyVendor\ContactForm\Module;
 
 use BEAR\Package\Bootstrap;
 use BEAR\Sunday\Extension\Application\AbstractApp;
+use PHPUnit\Framework\TestCase;
 
-class ModuleTest extends \PHPUnit_Framework_TestCase
+class ModuleTest extends TestCase
 {
     /**
      * Available contexts

@@ -4,10 +4,11 @@ namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\NameForm;
 use MyVendor\ContactForm\Form\PreviewForm;
+use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\FormFactory;
 
-class PreviewFormTest extends \PHPUnit_Framework_TestCase
+class PreviewFormTest extends TestCase
 {
     /**
      * @var PreviewForm

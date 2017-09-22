@@ -3,10 +3,11 @@
 namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\MinForm;
+use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\FormFactory;
 
-class NameFormTest extends \PHPUnit_Framework_TestCase
+class NameFormTest extends TestCase
 {
     /**
      * @var AbstractForm

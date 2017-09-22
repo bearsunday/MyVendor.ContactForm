@@ -3,9 +3,10 @@
 namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\ContactForm;
+use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\FormFactory;
 
-class ContactFormTest extends \PHPUnit_Framework_TestCase
+class ContactFormTest extends TestCase
 {
     protected function setUp()
     {

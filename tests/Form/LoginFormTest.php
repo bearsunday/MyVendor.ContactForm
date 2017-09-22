@@ -4,9 +4,10 @@ namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\ContactForm;
 use MyVendor\ContactForm\Form\LoginForm;
+use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\FormFactory;
 
-class LoginFormTest extends \PHPUnit_Framework_TestCase
+class LoginFormTest extends TestCase
 {
     /**
      * @var LoginForm

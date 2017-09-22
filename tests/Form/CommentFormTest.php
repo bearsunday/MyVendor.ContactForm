@@ -3,9 +3,10 @@
 namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\CommentForm;
+use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\FormFactory;
 
-class CommentFormTest extends \PHPUnit_Framework_TestCase
+class CommentFormTest extends TestCase
 {
     /**
      * @var CommentForm

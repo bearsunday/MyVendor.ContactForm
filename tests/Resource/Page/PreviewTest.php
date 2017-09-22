@@ -3,8 +3,9 @@
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\Exception\BadRequestException;
+use PHPUnit\Framework\TestCase;
 
-class PreviewTest extends \PHPUnit_Framework_TestCase
+class PreviewTest extends TestCase
 {
     const URI = 'page://self/preview';
 

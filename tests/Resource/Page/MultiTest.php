@@ -3,8 +3,9 @@
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\Exception\BadRequestException;
+use PHPUnit\Framework\TestCase;
 
-class MultiTest extends \PHPUnit_Framework_TestCase
+class MultiTest extends TestCase
 {
     const URI = 'page://self/multi';
 
@@ -85,7 +86,7 @@ class MultiTest extends \PHPUnit_Framework_TestCase
     }
     public function testOnPostNoSubmit()
     {
-        $this->setExpectedException(BadRequestException::class);
+        $this->expectException(BadRequestException::class);
         $query = [
             'login' => [
                 'user' => '',

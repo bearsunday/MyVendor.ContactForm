@@ -9,9 +9,10 @@ use BEAR\Resource\Exception\BadRequestException;
 use MyVendor\ContactForm\Form\CommentForm;
 use MyVendor\ContactForm\Form\CommentFormList;
 use MyVendor\ContactForm\Form\ContactForm;
+use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\FormFactory;
 
-class CommentFormListTest extends \PHPUnit_Framework_TestCase
+class CommentFormListTest extends TestCase
 {
     /**
      * @var CommentFormList
@@ -76,7 +77,7 @@ Comment must be alphabetic only ! ';
 
     public function testApplyNoId()
     {
-        $this->setExpectedException(BadRequestException::class);
+        $this->expectException(BadRequestException::class);
         $data = [
             'comment' => 'nice'
         ];
