@@ -13,8 +13,9 @@ git clone git@github.com:bearsunday/MyVendor.ContactForm.git
 cd MyVendor.ContactForm
 composer install
 comoser test
-composer serve
+COMPOSER_PROCESS_TIMEOUT=0 composer serve
 ```
+Open http://127.0.0.1:8080/
 
 ## Min
 ![min](https://user-images.githubusercontent.com/529021/30735643-b6a431f8-9fba-11e7-9145-6be9a441c9af.png)
