@@ -16,9 +16,13 @@ comoser test
 composer serve
 ```
 
- * http://127.0.0.1:8080/ index
- * http://127.0.0.1:8080/min mim form page
- * http://127.0.0.1:8080/multi for multiple form page.
- * http://127.0.0.1:8080/loop for repeated input element form page.
- * http://127.0.0.1:8080/preview for preview form page.
+## Min
+![min](https://user-images.githubusercontent.com/529021/30735643-b6a431f8-9fba-11e7-9145-6be9a441c9af.png)
+## Multiple Form
+![multi](https://user-images.githubusercontent.com/529021/30735735-03c3183c-9fbb-11e7-9393-ddec3b279f16.png)
+## Loop Input Form
+![loop](https://user-images.githubusercontent.com/529021/30735736-05c3fbba-9fbb-11e7-8d6a-da829c096b31.png)
+## Preview form with radiobox and checkbox
+![preview](https://user-images.githubusercontent.com/529021/30735752-11f2af80-9fbb-11e7-976c-325d1ad4a252.png)
+
  
