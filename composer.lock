@@ -509,16 +509,16 @@
         },
         {
             "name": "bear/resource",
-            "version": "1.8.2",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bearsunday/BEAR.Resource.git",
-                "reference": "238a1b7ee9c83a75542777dcff6f1c1b2204ba8c"
+                "reference": "46503d118dedb531bb12b8fac60732ab42e1c7fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bearsunday/BEAR.Resource/zipball/238a1b7ee9c83a75542777dcff6f1c1b2204ba8c",
-                "reference": "238a1b7ee9c83a75542777dcff6f1c1b2204ba8c",
+                "url": "https://api.github.com/repos/bearsunday/BEAR.Resource/zipball/46503d118dedb531bb12b8fac60732ab42e1c7fb",
+                "reference": "46503d118dedb531bb12b8fac60732ab42e1c7fb",
                 "shasum": ""
             },
             "require": {
@@ -571,7 +571,7 @@
                 "protocol",
                 "rest"
             ],
-            "time": "2017-09-02T07:06:57+00:00"
+            "time": "2017-09-22T05:45:36+00:00"
         },
         {
             "name": "bear/streamer",
