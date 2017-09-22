@@ -6,7 +6,7 @@
 
 [BEAR.Sunday](http://bearsunday.github.io/) web form sample application
 
-## How to test and run
+## Getting Started
 
 ```
 git clone git@github.com:bearsunday/MyVendor.ContactForm.git
