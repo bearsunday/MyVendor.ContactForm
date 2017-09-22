@@ -39,7 +39,7 @@ class LoginForm extends AbstractForm
         $this->filter->validate('user')->is('alnum');
         $this->filter->useFieldMessage('user', 'user id must be alphabetic only.');
         // password
-        $this->filter->validate('password')->isNot('blank');
+        $this->filter->validate('password')->isNotBlank();
         $this->filter->useFieldMessage('password', 'password is required.');
     }
 

@@ -39,11 +39,11 @@ class ContactForm extends AbstractForm
                 'value' => 'contact'
             ]);
         // name
-        $this->filter->validate('name')->isNot('blank');
+        $this->filter->validate('name')->isNotBlank();
         $this->filter->validate('name')->is('alnum');
         $this->filter->useFieldMessage('name', 'Name must be alphabetic only.');
         // message
-        $this->filter->validate('message')->isNot('blank');
+        $this->filter->validate('message')->isNotBlank();
         $this->filter->useFieldMessage('message', 'Message is required.');
     }
 

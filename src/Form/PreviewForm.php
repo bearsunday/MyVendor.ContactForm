@@ -44,7 +44,7 @@ class PreviewForm extends AbstractForm
                 'name' => 'submit',
                 'value' => 'Submit'
             ]);
-        $this->filter->validate('name')->isNot('blank');
+        $this->filter->validate('name')->isNotBlank();
         $this->filter->validate('name')->is('alnum');
         $this->filter->useFieldMessage('name', 'Name must be alphabetic only !!.');
     }
