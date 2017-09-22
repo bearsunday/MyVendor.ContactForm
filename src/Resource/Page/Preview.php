@@ -26,7 +26,7 @@ class Preview extends ResourceObject
         $this->form = $form;
     }
 
-    public function onGet()
+    public function onGet() : ResourceObject
     {
         $this['form'] = $this->form;
 
@@ -35,19 +35,14 @@ class Preview extends ResourceObject
 
     /**
      * @FormValidation
-     *
-     * @param $name
-     * @param mixed $number
-     * @param mixed $is_preview
-     *
-     * @return $this
      */
-    public function onPost($name, $number, $is_preview = '0')
+    public function onPost($name, $number, array $interests, $is_preview = '0') : ResourceObject
     {
         if ($is_preview !== '0') {
             $data = [
                 'name' => $name,
-                'number' => $number
+                'number' => $number,
+                'interests' => $interests
             ];
             $this->body = [
                 'form' => $this->form->getHiddenForm($data),
@@ -58,13 +53,16 @@ class Preview extends ResourceObject
             return $this;
         }
         $this->code = 201; // created
-        $this['name'] = $name;
-        $this['number'] = $number;
+        $this->body = [
+            'name' => $name,
+            'number' => $number,
+            'interests' => $interests
+        ];
 
         return $this;
     }
 
-    public function onPostValidationFailed()
+    public function onPostValidationFailed() : ResourceObject
     {
         $this->code = 400;
 

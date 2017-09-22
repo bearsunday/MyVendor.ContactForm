@@ -6,15 +6,16 @@
 <body>
     <div class="container">
     {% if is_preview %}
-        <h1>200</h1>
-        <b>OK ?</b>
-        <div>{{ name }}</div>
-        <div>{{ number }}</div>
+        <h1>Preview</h1>
+        <div>Name: {{ name }}</div>
+        <div>Number: {{ number }}</div>
+        <div>Interests: {{ interests|join(', ')}}</div>
         {{ form|raw }}
     {% elseif _code == 201 %}
         <h1>201</h1>
         <div>{{ name }}</div>
         <div>{{ number }}</div>
+        <div>{{ interests|join(', ')}}</div>
     {% else %}
         <h1>{{ _code }}</h1>
         {{ form|raw }}

@@ -19,6 +19,7 @@ class PreviewForm extends AbstractForm
         /* @var $tag Tag */
         $html .= $this->inputGroup('name', 'Name');
         $html .= $this->inputGroup('number', 'Number');
+        $html .= $this->inputGroup('interests', 'Interests');
         // submit
         $html .= $this->input('submit');
         $html .= $this->helper->tag('/form');
@@ -46,6 +47,7 @@ class PreviewForm extends AbstractForm
             ]);
         $this->setField('number', 'radio')
              ->setValue('10')
+            // value => label
              ->setOptions([
                  '10' => 'ten',
                  '20' => 'twenty',
@@ -56,6 +58,19 @@ class PreviewForm extends AbstractForm
                  'name' => 'number',
                  'size' => 20,
              ]);
+
+        $this->setField('interests', 'checkbox')
+            ->setValue('yes')
+            // value => label
+            ->setOptions([
+                'tech' => 'Tech',
+                'travel' => 'Travel',
+                'art' => 'Art'
+            ])
+            ->setAttribs([
+            'id' => 'interests',
+            'name' => 'interests'
+    ]);
 
         $this->setField('submit', 'submit')
             ->setAttribs([
@@ -70,10 +85,29 @@ class PreviewForm extends AbstractForm
     public function setValues(ResourceObject $ro)
     {
         $input = $this->getValue(); // input values
-        $ro['name'] = $input['name'];
+        $ro->body['name'] = $input['name'];
         // number
         $number = $this->get('number');
-        $ro['number'] = $number['options'][$number['value']]; // radio
+        $interests = $this->get('interests');
+        $ro->body['number'] = $number['options'][$number['value']]; // radio
+        $ro->body['interests'] = $this->getCheckedBoxLabel($interests['options'], $interests['value']); // checkbox
+    }
+
+    /**
+     * Return checked box label array
+     *
+     * ex) ["Travel", "Art] not ["travel", "art] when "Travel" and "Art" are checked
+     */
+    private function getCheckedBoxLabel(array $options, array $values) : array
+    {
+        $result = [];
+        foreach ($values as $value) {
+            if (isset($options[$value])) {
+                $result[] = $options[$value];
+            }
+        }
+
+        return $result;
     }
 
     public function getHiddenForm() : string
@@ -84,6 +118,10 @@ class PreviewForm extends AbstractForm
         $tag = $this->helper->get('tag');
         $html = $this->form(['action' => '/preview']);
         foreach ($values as $name => $value) {
+            if (is_array($value)) {
+                $html .= $this->getSelectbox($value, $name);
+                continue;
+            }
             $html .= $this->helper->input([
                 'type' => 'hidden',
                 'name' => $name,
@@ -109,6 +147,21 @@ class PreviewForm extends AbstractForm
         $html .= $this->input($input);
         $html .= $this->error($input);
         $html .= $tag('/div') . PHP_EOL;
+
+        return $html;
+    }
+
+    private function getSelectbox(array $values, string $name): string
+    {
+        $html = '';
+        foreach ($values as $value) {
+            $html .= $this->helper->input([
+                'type' => 'hidden',
+                'name' => $name . '[]',
+                'value' => $value,
+                'attribs' => []
+            ]);
+        }
 
         return $html;
     }
