@@ -16,7 +16,7 @@ class LoginForm extends AbstractForm
             'action' => '/multi'
         ]);
         // name
-        /** @var $tag Tag */
+        /* @var $tag Tag */
         $tag = $this->helper->get('tag');
         $form .= $tag('div', ['class' => 'form-group']);
         $form .= $tag('div', ['class' => 'form-group']);

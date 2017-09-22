@@ -20,7 +20,7 @@ class CommentFormListTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        /** @var $form CommentForm */
+        /* @var $form CommentForm */
         $form = (new FormFactory)->newInstance(CommentForm::class);
         $this->form = new CommentFormList($form);
         $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);

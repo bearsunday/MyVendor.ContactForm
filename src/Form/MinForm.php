@@ -16,7 +16,7 @@ class MinForm extends AbstractForm
             'action' => '/min'
         ]);
         // name
-        /** @var $tag Tag */
+        /* @var $tag Tag */
         $tag = $this->helper->get('tag');
         $form .= $tag('div', ['class' => 'form-group']);
         $form .= $this->helper->tag('div', ['class' => 'form-group']);

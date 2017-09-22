@@ -80,7 +80,7 @@ class PreviewForm extends AbstractForm
     {
         $values = $this->getValue();
         $values['is_preview'] = '0';
-        /** @var $tag Tag */
+        /* @var $tag Tag */
         $tag = $this->helper->get('tag');
         $html = $this->form(['action' => '/preview']);
         foreach ($values as $name => $value) {
@@ -99,7 +99,7 @@ class PreviewForm extends AbstractForm
 
     private function inputGroup(string $input, string $label) : string
     {
-        /** @var $tag Tag */
+        /* @var $tag Tag */
         $tag = $this->helper->get('tag');
         $html = $tag('div', ['class' => 'form-group']);
         $html .= $tag('div', ['class' => 'form-group']);
