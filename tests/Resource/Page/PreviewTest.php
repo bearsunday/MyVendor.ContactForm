@@ -1,6 +1,8 @@
 <?php
 namespace MyVendor\ContactForm\Resource\Page;
 
+use BEAR\Package\AppInjector;
+use BEAR\Resource\ResourceInterface;
 use PHPUnit\Framework\TestCase;
 
 class PreviewTest extends TestCase
@@ -15,12 +17,12 @@ class PreviewTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->resource = $GLOBALS['RESOURCE'];
+        $this->resource = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(ResourceInterface::class);
     }
 
     public function testOnGet()
     {
-        $page = $this->resource->get->uri(self::URI)->withQuery([])->eager->request();
+        $page = $this->resource->uri(self::URI)->withQuery([])();
         $this->assertSame(200, $page->code);
         $this->assertContains('</html>', (string) $page);
         $this->assertArrayHasKey('form', $page->body);
@@ -35,7 +37,7 @@ class PreviewTest extends TestCase
             'number' => '20',
             'interests' => ['art']
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(200, $page->code);
         $this->assertSame(1, $page->body['is_preview']);
         $this->assertArrayHasKey('form', $page->body);
@@ -51,7 +53,7 @@ class PreviewTest extends TestCase
             'number' => '20',
             'interests' => ['art']
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(201, $page->code);
     }
 }

@@ -1,7 +1,9 @@
 <?php
 namespace MyVendor\ContactForm\Resource\Page;
 
+use BEAR\Package\AppInjector;
 use BEAR\Resource\Exception\BadRequestException;
+use BEAR\Resource\ResourceInterface;
 use PHPUnit\Framework\TestCase;
 
 class MultiTest extends TestCase
@@ -16,12 +18,12 @@ class MultiTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->resource = $GLOBALS['RESOURCE'];
+        $this->resource = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(ResourceInterface::class);
     }
 
     public function testOnGet()
     {
-        $page = $this->resource->get->uri(self::URI)->withQuery([])->eager->request();
+        $page = $this->resource->uri(self::URI)();
         $this->assertSame(200, $page->code);
         $this->assertContains('</html>', (string) $page);
         $this->assertArrayHasKey('contact_form', $page->body);
@@ -39,7 +41,7 @@ class MultiTest extends TestCase
                 'message' => 'nice'
             ]
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(201, $page->code);
         $this->assertSame('contact', $page['action']);
     }
@@ -53,7 +55,7 @@ class MultiTest extends TestCase
                 'message' => '@@invalid'
             ]
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(400, $page->code);
     }
 
@@ -66,7 +68,7 @@ class MultiTest extends TestCase
                 'password' => 'secret'
             ]
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(200, $page->code);
         $this->assertSame('login', $page['action']);
     }
@@ -80,7 +82,7 @@ class MultiTest extends TestCase
                 'password' => ''
             ]
         ];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(400, $page->code);
     }
 
@@ -93,6 +95,6 @@ class MultiTest extends TestCase
                 'password' => ''
             ]
         ];
-        $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $this->resource->post->uri(self::URI)->withQuery($query)();
     }
 }

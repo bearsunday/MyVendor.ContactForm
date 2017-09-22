@@ -1,6 +1,8 @@
 <?php
 namespace MyVendor\ContactForm\Resource\Page;
 
+use BEAR\Package\AppInjector;
+use BEAR\Resource\ResourceInterface;
 use PHPUnit\Framework\TestCase;
 
 class MinTest extends TestCase
@@ -15,13 +17,13 @@ class MinTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->resource = $GLOBALS['RESOURCE'];
+        $this->resource = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(ResourceInterface::class);
     }
 
     public function testOnGet()
     {
         $query = ['name' => 'koriym'];
-        $page = $this->resource->get->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->uri(self::URI)->withQuery($query)();
         $this->assertSame(200, $page->code);
         $this->assertContains('</html>', (string) $page);
         $this->assertArrayHasKey('form', $page->body);
@@ -32,14 +34,14 @@ class MinTest extends TestCase
     public function testOnPostValidationFailed()
     {
         $query = ['name' => ''];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(400, $page->code);
     }
 
     public function testOnPost()
     {
         $query = ['name' => 'koriym'];
-        $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
+        $page = $this->resource->post->uri(self::URI)->withQuery($query)();
         $this->assertSame(201, $page->code);
     }
 }
