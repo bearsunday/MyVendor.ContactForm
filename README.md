@@ -12,8 +12,8 @@
 git clone git@github.com:bearsunday/MyVendor.ContactForm.git
 cd MyVendor.ContactForm
 composer install
-phpunit
-php -S 127.0.0.1:8080 var/www/index.php
+comoser test
+composer serve
 ```
 
  * http://127.0.0.1:8080/ index
