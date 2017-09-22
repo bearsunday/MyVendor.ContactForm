@@ -93,23 +93,6 @@ class PreviewForm extends AbstractForm
         $ro->body['interests'] = $this->getCheckedBoxLabel($interests['options'], $interests['value']); // checkbox
     }
 
-    /**
-     * Return checked box label array
-     *
-     * ex) ["Travel", "Art] not ["travel", "art] when "Travel" and "Art" are checked
-     */
-    private function getCheckedBoxLabel(array $options, array $values) : array
-    {
-        $result = [];
-        foreach ($values as $value) {
-            if (isset($options[$value])) {
-                $result[] = $options[$value];
-            }
-        }
-
-        return $result;
-    }
-
     public function getHiddenForm() : string
     {
         $values = $this->getValue();
@@ -135,6 +118,23 @@ class PreviewForm extends AbstractForm
         return $html;
     }
 
+    /**
+     * Return checked box label array
+     *
+     * ex) ["Travel", "Art] not ["travel", "art] when "Travel" and "Art" are checked
+     */
+    private function getCheckedBoxLabel(array $options, array $values) : array
+    {
+        $result = [];
+        foreach ($values as $value) {
+            if (isset($options[$value])) {
+                $result[] = $options[$value];
+            }
+        }
+
+        return $result;
+    }
+
     private function inputGroup(string $input, string $label) : string
     {
         /* @var $tag Tag */
@@ -151,7 +151,7 @@ class PreviewForm extends AbstractForm
         return $html;
     }
 
-    private function getSelectbox(array $values, string $name): string
+    private function getSelectbox(array $values, string $name) : string
     {
         $html = '';
         foreach ($values as $value) {

@@ -35,6 +35,10 @@ class Preview extends ResourceObject
 
     /**
      * @FormValidation
+     *
+     * @param mixed $name
+     * @param mixed $number
+     * @param mixed $is_preview
      */
     public function onPost($name, $number, array $interests, $is_preview = '0') : ResourceObject
     {
