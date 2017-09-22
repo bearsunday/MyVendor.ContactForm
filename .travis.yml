@@ -13,7 +13,6 @@ matrix:
 before_script:
   - composer self-update
   - if [ -z "$dependencies" ]; then composer install; fi;
-  - cp .env.dist .env
 script:
  - phpunit --coverage-text --coverage-clover=coverage.clover
 after_script:
