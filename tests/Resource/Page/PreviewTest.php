@@ -32,10 +32,12 @@ class PreviewTest extends TestCase
         $query = [
             'is_preview' => '1',
             'name' => 'bear',
-            'number' => '20'
+            'number' => '20',
+            'interests' => ['art']
         ];
         $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
-        $this->assertSame(100, $page->code);
+        $this->assertSame(200, $page->code);
+        $this->assertSame(1, $page->body['is_preview']);
         $this->assertArrayHasKey('form', $page->body);
         $formHtml = $page->body['form'];
         $this->assertContains('<input type="hidden" name="number" value="20" />', $formHtml);
@@ -46,7 +48,8 @@ class PreviewTest extends TestCase
         $query = [
             'is_preview' => '0',
             'name' => 'bear',
-            'number' => '20'
+            'number' => '20',
+            'interests' => ['art']
         ];
         $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
         $this->assertSame(201, $page->code);
