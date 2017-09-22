@@ -11,6 +11,7 @@ matrix:
   include:
     - php: 7.1
 before_script:
+  - rm composer.lock
   - composer self-update
   - if [ -z "$dependencies" ]; then composer install; fi;
 script:
