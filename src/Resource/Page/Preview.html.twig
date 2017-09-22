@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Preview</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
@@ -9,13 +10,13 @@
         <h1>Preview</h1>
         <div>Name: {{ name }}</div>
         <div>Number: {{ number }}</div>
-        <div>Interests: {{ interests|join(', ')}}</div>
+        <div>Interests: {{ interests|join(', ') }}</div>
         {{ form|raw }}
     {% elseif _code == 201 %}
         <h1>201</h1>
         <div>{{ name }}</div>
         <div>{{ number }}</div>
-        <div>{{ interests|join(', ')}}</div>
+        <div>{{ interests|join(', ') }}</div>
     {% else %}
         <h1>{{ _code }}</h1>
         {{ form|raw }}

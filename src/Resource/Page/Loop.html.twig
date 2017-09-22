@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Loop</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
     <div class="container">
     {% if _code == 201 %}
         <h1>201</h1>
@@ -13,6 +13,6 @@
         <h1>{{ _code }}</h1>
         {{ form|raw }}
     {% endif %}
-    </div>
+</div>
 </body>
 </html>
