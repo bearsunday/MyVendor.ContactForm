@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\ResourceObject;
@@ -27,7 +26,7 @@ class Preview extends ResourceObject
         $this->form = $form;
     }
 
-    public function onGet()
+    public function onGet() : ResourceObject
     {
         $this['form'] = $this->form;
 
@@ -36,12 +35,8 @@ class Preview extends ResourceObject
 
     /**
      * @FormValidation
-     *
-     * @param $name
-     *
-     * @return $this
      */
-    public function onPost($name, $number, $is_preview = '0')
+    public function onPost(string $name, string $number, string $is_preview = '0') : ResourceObject
     {
         if ($is_preview) {
             $this->code = 100; // continue
@@ -61,7 +56,7 @@ class Preview extends ResourceObject
         return $this;
     }
 
-    public function onPostValidationFailed()
+    public function onPostValidationFailed() : ResourceObject
     {
         $this->code = 400;
 

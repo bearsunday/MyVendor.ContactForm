@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm;
 
 use Aura\Filter\FilterFactory;
@@ -8,7 +7,6 @@ use Aura\Input\Builder;
 use BEAR\Resource\Exception\BadRequestException;
 use MyVendor\ContactForm\Form\CommentForm;
 use MyVendor\ContactForm\Form\CommentFormList;
-use MyVendor\ContactForm\Form\ContactForm;
 use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\FormFactory;
 

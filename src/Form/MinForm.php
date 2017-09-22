@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Form;
 
 use Aura\Html\Helper\Tag;
@@ -7,6 +6,33 @@ use Ray\WebFormModule\AbstractForm;
 
 class MinForm extends AbstractForm
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
+    {
+        $form = $this->form([
+            'method' => 'post',
+            'action' => '/min'
+        ]);
+        // name
+        /** @var $tag Tag */
+        $tag = $this->helper->get('tag');
+        $form .= $tag('div', ['class' => 'form-group']);
+        $form .= $this->helper->tag('div', ['class' => 'form-group']);
+        $form .= $this->helper->tag('label', ['for' => 'name']);
+        $form .= 'Name:';
+        $form .= $this->helper->tag('/label') . PHP_EOL;
+        $form .= $this->input('name');
+        $form .= $this->error('name');
+        $form .= $this->helper->tag('/div') . PHP_EOL;
+        // submit
+        $form .= $this->input('submit');
+        $form .= $this->helper->tag('/form');
+
+        return $form;
+    }
+
     // use SetAntiCsrfTrait;
 
     /**
@@ -31,32 +57,5 @@ class MinForm extends AbstractForm
         $this->filter->validate('name')->isNotBlank();
         $this->filter->validate('name')->is('alnum');
         $this->filter->useFieldMessage('name', 'Name must be alphabetic only !!.');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        $form = $this->form([
-            'method' => 'post',
-            'action' => '/min'
-        ]);
-        // name
-        /** @var $tag Tag */
-        $tag  = $this->helper->get('tag');
-        $form .= $tag('div', ['class' => 'form-group']);
-        $form .= $this->helper->tag('div', ['class' => 'form-group']);
-        $form .= $this->helper->tag('label', ['for' => 'name']);
-        $form .= 'Name:';
-        $form .= $this->helper->tag('/label') . PHP_EOL;
-        $form .= $this->input('name');
-        $form .= $this->error('name');
-        $form .= $this->helper->tag('/div') . PHP_EOL;
-        // submit
-        $form .= $this->input('submit');
-        $form .= $this->helper->tag('/form');
-
-        return $form;
     }
 }

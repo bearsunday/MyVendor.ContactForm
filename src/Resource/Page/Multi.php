@@ -1,11 +1,8 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\ResourceObject;
-use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
-use Ray\WebFormModule\AbstractAuraForm;
 use Ray\WebFormModule\Annotation\FormValidation;
 use Ray\WebFormModule\FormInterface;
 
@@ -22,9 +19,6 @@ class Multi extends ResourceObject
     protected $loginForm;
 
     /**
-     * @param FormInterface $contactForm
-     *
-     * @Inject
      * @Named("contactForm=contact_form, loginForm=login_form")
      */
     public function __construct(FormInterface $contactForm, FormInterface $loginForm)
@@ -41,7 +35,7 @@ class Multi extends ResourceObject
         return $this;
     }
 
-    public function onPost($submit, $contact = [], $login = [])
+    public function onPost($submit, $contact = [], $login = []) : ResourceObject
     {
         if ($submit === 'contact') {
             return $this->contactForm($contact['name'], $contact['message']);
@@ -53,12 +47,8 @@ class Multi extends ResourceObject
 
     /**
      * @FormValidation(form="contactForm", onFailure="onFailure")
-     *
-     * @param $name
-     *
-     * @return $this
      */
-    public function contactForm($name, $message)
+    public function contactForm(string $name, string $message) : ResourceObject
     {
         $this->code = 201;
         $this['action'] = 'contact';
@@ -70,12 +60,8 @@ class Multi extends ResourceObject
 
     /**
      * @FormValidation(form="loginForm", onFailure="onFailure")
-     *
-     * @param $name
-     *
-     * @return $this
      */
-    public function login($user, $password)
+    public function login(string $user, string $password) : ResourceObject
     {
         $this->code = 200;
         $this['action'] = 'login';
@@ -85,7 +71,7 @@ class Multi extends ResourceObject
         return $this;
     }
 
-    public function onFailure()
+    public function onFailure() : ResourceObject
     {
         $this->code = 400;
 

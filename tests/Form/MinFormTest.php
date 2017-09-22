@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\MinForm;
@@ -7,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\AbstractForm;
 use Ray\WebFormModule\FormFactory;
 
-class NameFormTest extends TestCase
+class MinFormTest extends TestCase
 {
     /**
      * @var AbstractForm

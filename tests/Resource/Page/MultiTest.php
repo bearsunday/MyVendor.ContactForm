@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\Exception\BadRequestException;
@@ -84,6 +83,7 @@ class MultiTest extends TestCase
         $page = $this->resource->post->uri(self::URI)->withQuery($query)->eager->request();
         $this->assertSame(400, $page->code);
     }
+
     public function testOnPostNoSubmit()
     {
         $this->expectException(BadRequestException::class);

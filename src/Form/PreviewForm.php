@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Form;
 
 use Aura\Html\Helper\Tag;
@@ -8,6 +7,25 @@ use Ray\WebFormModule\AbstractForm;
 
 class PreviewForm extends AbstractForm
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
+    {
+        $html = $this->form(['action' => '/preview']);
+        // is_preview
+        $html .= $this->input('is_preview');
+        // name
+        /* @var $tag Tag */
+        $html .= $this->inputGroup('name', 'Name');
+        $html .= $this->inputGroup('number', 'Number');
+        // submit
+        $html .= $this->input('submit');
+        $html .= $this->helper->tag('/form');
+
+        return $html;
+    }
+
     // use SetAntiCsrfTrait;
 
     /**
@@ -16,7 +34,7 @@ class PreviewForm extends AbstractForm
     public function init()
     {
         $this->setField('is_preview', 'hidden')
-             ->setValue("1");
+             ->setValue('1');
         $this->setField('name')
             ->setAttribs([
                 'id' => 'name',
@@ -49,56 +67,27 @@ class PreviewForm extends AbstractForm
         $this->filter->useFieldMessage('name', 'Name must be alphabetic only !!.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        $html = $this->form([ 'action' => '/preview']);
-        // is_preview
-        $html .= $this->input('is_preview');
-        // name
-        /* @var $tag Tag */
-        $html .= $this->inputGroup('name', 'Name');
-        $html .= $this->inputGroup('number', 'Number');
-        // submit
-        $html .= $this->input('submit');
-        $html .= $this->helper->tag('/form');
-
-        return $html;
-    }
-
-    /**
-     * @param ResourceObject $ro
-     *
-     * @throws \Aura\Input\Exception\NoSuchInput
-     */
     public function setValues(ResourceObject $ro)
     {
         $input = $this->getValue(); // input values
         $ro['name'] = $input['name'];
         // number
         $number = $this->get('number');
-        $ro['number'] = $number["options"][$number["value"]]; // radio
+        $ro['number'] = $number['options'][$number['value']]; // radio
     }
 
-    /**
-     * @param array $elementes
-     *
-     * @throws \Aura\Input\Exception\NoSuchInput
-     */
-    public function getHiddenForm()
+    public function getHiddenForm() : string
     {
         $values = $this->getValue();
         $values['is_preview'] = '0';
         /** @var $tag Tag */
         $tag = $this->helper->get('tag');
-        $html = $this->form([ 'action' => '/preview']);
+        $html = $this->form(['action' => '/preview']);
         foreach ($values as $name => $value) {
             $html .= $this->helper->input([
-                'type'    => 'hidden',
-                'name'    => $name,
-                'value'   => $value,
+                'type' => 'hidden',
+                'name' => $name,
+                'value' => $value,
                 'attribs' => []
             ]);
         }
@@ -108,13 +97,7 @@ class PreviewForm extends AbstractForm
         return $html;
     }
 
-    /**
-     * @param $tag
-     * @param $form
-     *
-     * @return string
-     */
-    private function inputGroup($input, $label)
+    private function inputGroup(string $input, string $label) : string
     {
         /** @var $tag Tag */
         $tag = $this->helper->get('tag');

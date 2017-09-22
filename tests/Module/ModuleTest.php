@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Module;
 
 use BEAR\Package\Bootstrap;

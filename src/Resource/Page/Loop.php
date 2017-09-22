@@ -1,11 +1,8 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\ResourceObject;
-use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
-use Ray\WebFormModule\AbstractAuraForm;
 use Ray\WebFormModule\Annotation\FormValidation;
 use Ray\WebFormModule\FormInterface;
 
@@ -17,9 +14,6 @@ class Loop extends ResourceObject
     protected $form;
 
     /**
-     * @param FormInterface $form
-     *
-     * @Inject
      * @Named("loop")
      */
     public function __construct(FormInterface $form)
@@ -27,7 +21,7 @@ class Loop extends ResourceObject
         $this->form = $form;
     }
 
-    public function onGet()
+    public function onGet() : ResourceObject
     {
         $this['form'] = $this->form;
 
@@ -36,20 +30,17 @@ class Loop extends ResourceObject
 
     /**
      * @FormValidation
-     *
-     * @param $name
-     *
-     * @return $this
      */
-    public function onPost($comment, $id)
+    public function onPost(string $comment, string $id) : ResourceObject
     {
+        unset($id);
         $this->code = 201;
         $this['comment'] = $comment;
 
         return $this;
     }
 
-    public function onPostValidationFailed()
+    public function onPostValidationFailed() : ResourceObject
     {
         $this->code = 400;
 

@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
 use PHPUnit\Framework\TestCase;

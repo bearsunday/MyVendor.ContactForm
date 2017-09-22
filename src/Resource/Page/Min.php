@@ -1,9 +1,7 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
 use BEAR\Resource\ResourceObject;
-use Ray\Di\Di\Inject;
 use Ray\Di\Di\Named;
 use Ray\WebFormModule\Annotation\FormValidation;
 use Ray\WebFormModule\FormInterface;
@@ -18,7 +16,6 @@ class Min extends ResourceObject
     /**
      * @param FormInterface $form
      *
-     * @Inject
      * @Named("name")
      */
     public function __construct(FormInterface $form)
@@ -36,11 +33,9 @@ class Min extends ResourceObject
     /**
      * @FormValidation
      *
-     * @param $name
-     *
-     * @return $this
+     * @param mixed $name
      */
-    public function onPost($name)
+    public function onPost($name) : ResourceObject
     {
         $this->code = 201;
         $this['name'] = $name;
@@ -48,7 +43,7 @@ class Min extends ResourceObject
         return $this;
     }
 
-    public function onPostValidationFailed()
+    public function onPostValidationFailed() : ResourceObject
     {
         $this->code = 400;
 

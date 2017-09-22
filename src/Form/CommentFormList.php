@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm\Form;
 
 use BEAR\Resource\Exception\BadRequestException;
@@ -30,6 +29,19 @@ class CommentFormList extends AbstractForm
     /**
      * {@inheritdoc}
      */
+    public function __toString()
+    {
+        $forms = '';
+        foreach ($this->forms as $form) {
+            $forms .= (string) $form;
+        }
+
+        return $forms;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function init()
     {
         foreach ($this->ids as $id) {
@@ -48,18 +60,5 @@ class CommentFormList extends AbstractForm
         $form = $this->forms[$data['id']];
 
         return $form->apply($data);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function __toString()
-    {
-        $forms = '';
-        foreach ($this->forms as $form) {
-            $forms .= (string) $form;
-        }
-
-        return $forms;
     }
 }

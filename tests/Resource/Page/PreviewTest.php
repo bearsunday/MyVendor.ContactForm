@@ -1,8 +1,6 @@
 <?php
-
 namespace MyVendor\ContactForm\Resource\Page;
 
-use BEAR\Resource\Exception\BadRequestException;
 use PHPUnit\Framework\TestCase;
 
 class PreviewTest extends TestCase
@@ -24,7 +22,7 @@ class PreviewTest extends TestCase
     {
         $page = $this->resource->get->uri(self::URI)->withQuery([])->eager->request();
         $this->assertSame(200, $page->code);
-        $this->assertContains('</html>',  (string) $page);
+        $this->assertContains('</html>', (string) $page);
         $this->assertArrayHasKey('form', $page->body);
         $this->assertContains('</form>', (string) $page->body['form']);
     }

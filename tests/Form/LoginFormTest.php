@@ -1,5 +1,4 @@
 <?php
-
 namespace MyVendor\ContactForm;
 
 use MyVendor\ContactForm\Form\ContactForm;
