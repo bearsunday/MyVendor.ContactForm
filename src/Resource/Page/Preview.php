@@ -49,7 +49,7 @@ class Preview extends ResourceObject
                 'interests' => $interests
             ];
             $this->body = [
-                'form' => $this->form->getHiddenForm($data),
+                'form' => $this->form->getHiddenForm(),
                 'is_preview' => 1
             ];
             $this->form->setValues($this);
