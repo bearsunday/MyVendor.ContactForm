@@ -1,6 +1,7 @@
 <?php
 namespace MyVendor\ContactForm\Form;
 
+use Aura\Html\Helper\Input;
 use Aura\Html\Helper\Tag;
 use BEAR\Resource\ResourceObject;
 use Ray\WebFormModule\AbstractForm;
@@ -106,7 +107,9 @@ class PreviewForm extends AbstractForm
                 $html .= $this->getSelectbox($value, $name);
                 continue;
             }
-            $html .= $this->helper->input([
+            /* @var Input $input */
+            $input =  $this->helper->get('input');
+            $html .= $input([
                 'type' => 'hidden',
                 'name' => $name,
                 'value' => $value,
@@ -156,7 +159,9 @@ class PreviewForm extends AbstractForm
     {
         $html = '';
         foreach ($values as $value) {
-            $html .= $this->helper->input([
+            /* @var Input $input */
+            $input =  $this->helper->get('input');
+            $html .= $input([
                 'type' => 'hidden',
                 'name' => $name . '[]',
                 'value' => $value,
