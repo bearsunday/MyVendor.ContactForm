@@ -35,7 +35,9 @@ class Loop extends ResourceObject
     {
         unset($id);
         $this->code = 201;
-        $this['comment'] = $comment;
+        $this->body = [
+            'comment' => $comment
+        ];
 
         return $this;
     }

@@ -38,7 +38,9 @@ class Min extends ResourceObject
     public function onPost($name) : ResourceObject
     {
         $this->code = 201;
-        $this['name'] = $name;
+        $this->body = [
+            'name' => $name
+        ];
 
         return $this;
     }

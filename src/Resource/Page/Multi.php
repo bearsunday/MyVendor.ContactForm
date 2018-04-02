@@ -29,8 +29,10 @@ class Multi extends ResourceObject
 
     public function onGet()
     {
-        $this['contact_form'] = $this->contactForm;
-        $this['login_form'] = $this->loginForm;
+        $this->body = [
+            'contact_form' => $this->contactForm,
+            'login_form' => $this->loginForm
+        ];
 
         return $this;
     }
@@ -51,9 +53,11 @@ class Multi extends ResourceObject
     public function contactForm(string $name, string $message) : ResourceObject
     {
         $this->code = 201;
-        $this['action'] = 'contact';
-        $this['name'] = $name;
-        $this['message'] = $message;
+        $this->body = [
+            'action' => 'contact',
+            'name' => $name,
+            'message' => $message
+        ];
 
         return $this;
     }
@@ -64,9 +68,11 @@ class Multi extends ResourceObject
     public function login(string $user, string $password) : ResourceObject
     {
         $this->code = 200;
-        $this['action'] = 'login';
-        $this['user'] = $user;
-        $this['password'] = $password;
+        $this->body = [
+            'action' => 'login',
+            'user' => $user,
+            'password' => $password
+        ];
 
         return $this;
     }
