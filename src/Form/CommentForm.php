@@ -18,12 +18,13 @@ class CommentForm extends AbstractForm
         // hidden
         $form .= $this->input('id');
         // name
-        /* @var $tag Tag */
         $form .= $this->input('comment');
         $form .= $this->error('comment');
         // submit
         $form .= $this->input('submit');
-        $form .= $this->helper->tag('/form');
+        $tag = $this->helper->get('tag');
+        /* @var $tag Tag */
+        $form .= $tag('/form');
         $form .= PHP_EOL . PHP_EOL;
 
         return $form;

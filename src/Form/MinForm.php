@@ -19,16 +19,16 @@ class MinForm extends AbstractForm
         /* @var $tag Tag */
         $tag = $this->helper->get('tag');
         $form .= $tag('div', ['class' => 'form-group']);
-        $form .= $this->helper->tag('div', ['class' => 'form-group']);
-        $form .= $this->helper->tag('label', ['for' => 'name']);
+        $form .= $tag('div', ['class' => 'form-group']);
+        $form .= $tag('label', ['for' => 'name']);
         $form .= 'Name:';
-        $form .= $this->helper->tag('/label') . PHP_EOL;
+        $form .= $tag('/label') . PHP_EOL;
         $form .= $this->input('name');
         $form .= $this->error('name');
-        $form .= $this->helper->tag('/div') . PHP_EOL;
+        $form .= $tag('/div') . PHP_EOL;
         // submit
         $form .= $this->input('submit');
-        $form .= $this->helper->tag('/form');
+        $form .= $tag('/form');
 
         return $form;
     }

@@ -16,13 +16,14 @@ class PreviewForm extends AbstractForm
         // is_preview
         $html .= $this->input('is_preview');
         // name
-        /* @var $tag Tag */
         $html .= $this->inputGroup('name', 'Name');
         $html .= $this->inputGroup('number', 'Number');
         $html .= $this->inputGroup('interests', 'Interests');
         // submit
         $html .= $this->input('submit');
-        $html .= $this->helper->tag('/form');
+        /* @var $tag Tag */
+        $tag = $this->helper->get('tag');
+        $html .= $tag('/form');
 
         return $html;
     }
