@@ -1,14 +1,11 @@
 <?php
 namespace MyVendor\ContactForm;
 
-use Aura\Filter\FilterFactory;
-use Aura\Html\HelperLocatorFactory;
-use Aura\Input\Builder;
+use BEAR\Package\AppInjector;
 use BEAR\Resource\Exception\BadRequestException;
 use MyVendor\ContactForm\Form\CommentForm;
 use MyVendor\ContactForm\Form\CommentFormList;
 use PHPUnit\Framework\TestCase;
-use Ray\WebFormModule\FormFactory;
 
 class CommentFormListTest extends TestCase
 {
@@ -19,12 +16,10 @@ class CommentFormListTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
-        /* @var $form CommentForm */
-        $form = (new FormFactory)->newInstance(CommentForm::class);
+        $form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(CommentForm::class);
+        $form->init();
         $this->form = new CommentFormList($form);
-        $this->form->setBaseDependencies(new Builder, new FilterFactory, new HelperLocatorFactory);
-        $this->form->postConstruct();
+        $this->form->init();
     }
 
     public function testString()

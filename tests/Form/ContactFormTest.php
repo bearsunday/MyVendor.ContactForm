@@ -1,17 +1,21 @@
 <?php
 namespace MyVendor\ContactForm;
 
+use BEAR\Package\AppInjector;
 use MyVendor\ContactForm\Form\ContactForm;
 use PHPUnit\Framework\TestCase;
-use Ray\WebFormModule\FormFactory;
 
 class ContactFormTest extends TestCase
 {
+    /**
+     * @var ContactForm
+     */
+    private $form;
+
     protected function setUp()
     {
-        parent::setUp();
-        /* @var $form ContactForm */
-        $this->form = (new FormFactory)->newInstance(ContactForm::class);
+        $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(ContactForm::class);
+        $this->form->init();
     }
 
     public function testApplyFailure()

@@ -1,10 +1,10 @@
 <?php
 namespace MyVendor\ContactForm;
 
+use BEAR\Package\AppInjector;
 use MyVendor\ContactForm\Form\MinForm;
 use PHPUnit\Framework\TestCase;
 use Ray\WebFormModule\AbstractForm;
-use Ray\WebFormModule\FormFactory;
 
 class MinFormTest extends TestCase
 {
@@ -15,9 +15,8 @@ class MinFormTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
-        /* @var $form MinForm */
-        $this->form = (new FormFactory())->newInstance(MinForm::class);
+        $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(MinForm::class);
+        $this->form->init();
     }
 
     public function testValdationFailed()

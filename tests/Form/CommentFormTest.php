@@ -1,9 +1,9 @@
 <?php
 namespace MyVendor\ContactForm;
 
+use BEAR\Package\AppInjector;
 use MyVendor\ContactForm\Form\CommentForm;
 use PHPUnit\Framework\TestCase;
-use Ray\WebFormModule\FormFactory;
 
 class CommentFormTest extends TestCase
 {
@@ -14,9 +14,8 @@ class CommentFormTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
-        /* @var $form CommentForm */
-        $this->form = (new FormFactory)->newInstance(CommentForm::class);
+        $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(CommentForm::class);
+        $this->form->init();
     }
 
     public function testSetId()

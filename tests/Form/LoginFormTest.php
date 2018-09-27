@@ -1,10 +1,9 @@
 <?php
 namespace MyVendor\ContactForm;
 
-use MyVendor\ContactForm\Form\ContactForm;
+use BEAR\Package\AppInjector;
 use MyVendor\ContactForm\Form\LoginForm;
 use PHPUnit\Framework\TestCase;
-use Ray\WebFormModule\FormFactory;
 
 class LoginFormTest extends TestCase
 {
@@ -15,9 +14,8 @@ class LoginFormTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
-        /* @var $form ContactForm */
-        $this->form = (new FormFactory())->newInstance(LoginForm::class);
+        $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(LoginForm::class);
+        $this->form->init();
     }
 
     public function testApplySuccess()

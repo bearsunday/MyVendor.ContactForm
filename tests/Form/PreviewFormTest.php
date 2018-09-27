@@ -1,10 +1,9 @@
 <?php
 namespace MyVendor\ContactForm;
 
-use MyVendor\ContactForm\Form\NameForm;
+use BEAR\Package\AppInjector;
 use MyVendor\ContactForm\Form\PreviewForm;
 use PHPUnit\Framework\TestCase;
-use Ray\WebFormModule\FormFactory;
 
 class PreviewFormTest extends TestCase
 {
@@ -15,9 +14,8 @@ class PreviewFormTest extends TestCase
 
     protected function setUp()
     {
-        parent::setUp();
-        /* @var $form NameForm */
-        $this->form = (new FormFactory())->newInstance(PreviewForm::class);
+        $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(PreviewForm::class);
+        $this->form->init();
     }
 
     public function testValdationFailed()
