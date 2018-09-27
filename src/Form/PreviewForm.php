@@ -72,7 +72,7 @@ class PreviewForm extends AbstractForm
             ->setAttribs([
             'id' => 'interests',
             'name' => 'interests'
-    ]);
+            ]);
 
         $this->setField('submit', 'submit')
             ->setAttribs([
@@ -108,7 +108,7 @@ class PreviewForm extends AbstractForm
                 continue;
             }
             /* @var Input $input */
-            $input =  $this->helper->get('input');
+            $input = $this->helper->get('input');
             $html .= $input([
                 'type' => 'hidden',
                 'name' => $name,
@@ -160,7 +160,7 @@ class PreviewForm extends AbstractForm
         $html = '';
         foreach ($values as $value) {
             /* @var Input $input */
-            $input =  $this->helper->get('input');
+            $input = $this->helper->get('input');
             $html .= $input([
                 'type' => 'hidden',
                 'name' => $name . '[]',
