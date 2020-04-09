@@ -3,15 +3,15 @@
     "license": "proprietary",
     "description": "form demo application",
     "require": {
-        "php": ">=7.0.0",
-        "roave/security-advisories": "dev-master",
+        "php": ">=7.1.0",
         "bear/package": "^1.4",
         "ray/web-form-module": "^0.5",
-        "madapaja/twig-module": "^1.1"
+        "madapaja/twig-module": "^2.2"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "phpunit/phpunit": "^6.3",
-        "bear/qatools": "^1.4"
+        "bear/qatools": "^1.9"
     },
     "autoload": {
         "psr-4": {

@@ -1,18 +1,16 @@
 language: php
 php:
-  - 7.0
-  - 7.1
   - 7.2
-sudo: false
+  - 7.3
+  - 7.4
 cache:
   directories:
-    - $HOME/.composer/cache
+  - vendor
+  - $HOME/.composer/cache
+
 before_script:
-  - rm composer.lock
   - composer self-update
-  - if [ -z "$dependencies" ]; then composer install; fi;
+  - composer install
+
 script:
  - phpunit --coverage-text --coverage-clover=coverage.clover
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
