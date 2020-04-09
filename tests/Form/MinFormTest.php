@@ -13,7 +13,7 @@ class MinFormTest extends TestCase
      */
     private $form;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(MinForm::class);
         $this->form->init();

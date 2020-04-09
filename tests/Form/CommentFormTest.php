@@ -12,7 +12,7 @@ class CommentFormTest extends TestCase
      */
     private $form;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         $this->form = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(CommentForm::class);
         $this->form->init();

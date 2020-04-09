@@ -15,7 +15,7 @@ class MultiTest extends TestCase
      */
     private $resource;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
         $this->resource = (new AppInjector('MyVendor\ContactForm', 'html-app'))->getInstance(ResourceInterface::class);
